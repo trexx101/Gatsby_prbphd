@@ -2,141 +2,133 @@ import React from "react";
 import PropTypes from "prop-types";
 import Particles from "react-particles-js";
 
-
 import FaArrowDown from "react-icons/lib/fa/arrow-down";
 
 const Hero = props => {
   const { scrollToContent, backgrounds, theme } = props;
-  
 
   return (
     <React.Fragment>
-      <section className="holder"> 
-      <Particles 
-      params={{
-        "particles": {
-          "number": {
-            "value": 250,
-            "density": {
-              "enable": true,
-              "value_area": 868.0624057955
-            }
-          },
-          "color": {
-            "value": "#ecd018"
-          },
-          "shape": {
-            "type": "circle",
-            "stroke": {
-              "width": 0,
-              "color": "#000000"
-            },
-            "polygon": {
-              "nb_sides": 5
-            },
-            "image": {
-              "src": "img/github.svg",
-              "width": 100,
-              "height": 100
-            }
-          },
-          "opacity": {
-            "value": 0.5,
-            "random": true,
-            "anim": {
-              "enable": false,
-              "speed": 1,
-              "opacity_min": 0.1,
-              "sync": false
-            }
-          },
-          "size": {
-            "value": 3,
-            "random": true,
-            "anim": {
-              "enable": false,
-              "speed": 40,
-              "size_min": 0.1,
-              "sync": false
-            }
-          },
-          "line_linked": {
-            "enable": true,
-            "distance": 150,
-            "color": "#e2d018",
-            "opacity": 0.4,
-            "width": 1
-          },
-          "move": {
-            "enable": true,
-            "speed": 5,
-            "direction": "none",
-            "random": false,
-            "straight": false,
-            "out_mode": "out",
-            "bounce": false,
-            "attract": {
-              "enable": false,
-              "rotateX": 600,
-              "rotateY": 1200
-            }
-          }
-        },
-        "interactivity": {
-          "detect_on": "canvas",
-          "events": {
-            "onhover": {
-              "enable": true,
-              "mode": "repulse"
-            },
-            "onclick": {
-              "enable": true,
-              "mode": "push"
-            },
-            "resize": false
-          },
-          "modes": {
-            "grab": {
-              "distance": 400,
-              "line_linked": {
-                "opacity": 1
+      <section className="holder">
+        <Particles
+          params={{
+            particles: {
+              number: {
+                value: 250,
+                density: {
+                  enable: true,
+                  value_area: 868.0624057955
+                }
+              },
+              color: {
+                value: "#ecd018"
+              },
+              shape: {
+                type: "circle",
+                stroke: {
+                  width: 0,
+                  color: "#000000"
+                },
+                polygon: {
+                  nb_sides: 5
+                },
+                image: {
+                  src: "img/github.svg",
+                  width: 100,
+                  height: 100
+                }
+              },
+              opacity: {
+                value: 0.5,
+                random: true,
+                anim: {
+                  enable: false,
+                  speed: 1,
+                  opacity_min: 0.1,
+                  sync: false
+                }
+              },
+              size: {
+                value: 3,
+                random: true,
+                anim: {
+                  enable: false,
+                  speed: 40,
+                  size_min: 0.1,
+                  sync: false
+                }
+              },
+              line_linked: {
+                enable: true,
+                distance: 150,
+                color: "#e2d018",
+                opacity: 0.4,
+                width: 1
+              },
+              move: {
+                enable: true,
+                speed: 5,
+                direction: "none",
+                random: false,
+                straight: false,
+                out_mode: "out",
+                bounce: false,
+                attract: {
+                  enable: false,
+                  rotateX: 600,
+                  rotateY: 1200
+                }
               }
             },
-            "bubble": {
-              "distance": 400,
-              "size": 40,
-              "duration": 2,
-              "opacity": 8,
-              "speed": 3
+            interactivity: {
+              detect_on: "canvas",
+              events: {
+                onhover: {
+                  enable: true,
+                  mode: "repulse"
+                },
+                onclick: {
+                  enable: true,
+                  mode: "push"
+                },
+                resize: false
+              },
+              modes: {
+                grab: {
+                  distance: 400,
+                  line_linked: {
+                    opacity: 1
+                  }
+                },
+                bubble: {
+                  distance: 400,
+                  size: 40,
+                  duration: 2,
+                  opacity: 8,
+                  speed: 3
+                },
+                repulse: {
+                  distance: 60,
+                  duration: 0.4
+                },
+                push: {
+                  particles_nb: 4
+                },
+                remove: {
+                  particles_nb: 2
+                }
+              }
             },
-            "repulse": {
-              "distance": 60,
-              "duration": 0.4
-            },
-            "push": {
-              "particles_nb": 4
-            },
-            "remove": {
-              "particles_nb": 2
-            }
-          }
-        },
-        "retina_detect": true
-      }}
-      style={{
-        "background": `${theme.hero.background}`,
-        "minHeight": "100vh",
-        "width": "100%"
-      }}
->
-
-  </Particles>
-  <h1 className="href">Welcome to Logia</h1>
-  
-</section>
-
-      
-      
+            retina_detect: true
+          }}
+          style={{
+            background: `${theme.hero.background}`,
+            minHeight: "100vh",
+            width: "100%"
+          }}
+        />
+        <h1 className="href">Proofreading & Structuring service</h1>
+      </section>
 
       {/* --- STYLES --- */}
       <style jsx>{`
@@ -153,8 +145,6 @@ const Hero = props => {
           min-height: 100vh;
           padding: ${theme.space.inset.l};
           padding-top: ${theme.header.height.homepage};
-          
-          
         }
 
         .href {

@@ -7,7 +7,7 @@ import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
 import config from "../../../content/meta/config";
 import Menu from "../Menu";
 
-import avatar from "../../images/png/Logo2.png";
+import avatar from "../../images/png/prbphd_small_logo.png";
 
 class Header extends React.Component {
   state = {
@@ -111,7 +111,6 @@ class Header extends React.Component {
           }
 
           .logo {
-            
             display: inline-block;
             height: 48px;
             margin: ${theme.space.inline.default};

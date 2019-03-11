@@ -3,5 +3,5 @@ title: footnote
 ---
 
 * [FAQ](https://www.netlify.com/)
-* [Privacy Policy](https://unsplash.com)
+* [Privacy Policy](/privacy)
 * [Contact](https://pixabay.com)

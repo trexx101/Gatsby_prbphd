@@ -1,8 +1,7 @@
 ---
-title: About the team
-menuTitle: About
+title: Contents
+menuTitle: Contents
 ---
-
 
 ### Inah Afen
 
