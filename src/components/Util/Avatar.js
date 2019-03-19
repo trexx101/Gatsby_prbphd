@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from './propTypes';
+import PropTypes from './PropTypes';
 
 import classNames from 'classnames';
 
