@@ -6,6 +6,7 @@ import FaHome from "react-icons/lib/fa/home";
 import FaSearch from "react-icons/lib/fa/search";
 import FaEnvelope from "react-icons/lib/fa/envelope";
 import FaTag from "react-icons/lib/fa/tag";
+import { SocialIcon } from 'react-social-icons';
 
 import Item from "./Item";
 import Expand from "./Expand";
@@ -27,8 +28,9 @@ class Menu extends React.Component {
       //{ to: "/category/", label: "Categories", icon: FaTag },
       // { to: "/search/", label: "Search", icon: FaSearch },
       ...pages,
-      { to: "/contact/", label: "Get Quote", icon: FaEnvelope }
+     // { to: "/contact/", label: "Get Quote", icon: FaEnvelope }
     ];
+  this.quotepage = [{to: "/contact/", label: "Get Quote", icon: FaEnvelope}];
 
     this.renderedItems = []; // will contain references to rendered DOM elements of menu
   }
@@ -149,6 +151,13 @@ class Menu extends React.Component {
             {this.items.map(item => (
               <Item item={item} key={item.label} icon={item.icon} theme={theme} />
             ))}
+            {this.quotepage.map(itm => (
+              <Item item={itm} key={itm.label} icon={itm.icon} theme={theme} />
+              
+            ))}
+            <SocialIcon url="https://www.facebook.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3, marginLleft:4 }} bgColor="#ff5a01" />
+            <SocialIcon url="https://www.twitter.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" />
+            <SocialIcon url="https://www.whatsapp.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" network="whatsapp" />
           </ul>
           {this.state.hiddenItems.length > 0 && <Expand onClick={this.toggleMenu} theme={theme} />}
           {open &&
