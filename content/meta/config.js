@@ -11,7 +11,7 @@ module.exports = {
   authorName: "Inah Afen",
   authorTwitterAccount: "trexx101",
   // info
-  headerTitle: "ProofReading By UK PHD",
+  headerTitle: "",
   headerSubTitle: "",
   // manifest.json
   manifestName: "ProofReading By UK PHD - A Thesis review service",

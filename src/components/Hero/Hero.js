@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Particles from "react-particles-js";
+import { Col, Table } from 'reactstrap';
 
 import FaArrowDown from "react-icons/lib/fa/arrow-down";
+const fbGroup = '<div class="fb-group" data-href="https://www.facebook.com/proofreadingbyPhD/" data-width="280" data-show-social-context="true" data-show-metadata="false"></div>';
 
 const Hero = props => {
   const { scrollToContent, backgrounds, theme } = props;
@@ -14,7 +16,7 @@ const Hero = props => {
           params={{
             particles: {
               number: {
-                value: 250,
+                value: 120,
                 density: {
                   enable: true,
                   value_area: 868.0624057955
@@ -117,7 +119,7 @@ const Hero = props => {
                 remove: {
                   particles_nb: 2
                 }
-              }
+              }   
             },
             retina_detect: true
           }}
@@ -127,7 +129,37 @@ const Hero = props => {
             width: "100%"
           }}
         />
-        <h1 className="href">Proofreading & Structuring service</h1>
+        <div className="href row ">
+        <div className="col-md-9 col-sm-12 my-sm-5">
+        <div className="justify-content-start">
+        <h2 className="mb-4">Research paper and Manuscript editing</h2>
+        <p>
+          Have you Document proofreading done by proffessionals
+          
+        </p>
+        </div>
+        
+        </div>
+        <div className="col-md-offset-3 col-md-2">
+        <div className="justify-content-end">
+        <Table hover>
+        <tbody>
+          <tr>
+            <td>300+ Papers Reviewed</td>
+          </tr>
+          <tr>
+            <td>30+ Universities</td>
+          </tr>
+          <tr>
+            <td>20,343+ Facebook following</td>
+          </tr>
+        </tbody>
+      </Table>
+        </div>
+        
+        </div>
+        </div>
+        
       </section>
 
       {/* --- STYLES --- */}
@@ -149,13 +181,15 @@ const Hero = props => {
 
         .href {
           position: Absolute;
-          left: 100px;
+          left: 80px;
           text-align: center;
           font-size: ${theme.hero.h1.size};
-          margin: ${theme.space.stack.l};
+          
           color: ${theme.hero.h1.color};
           line-height: ${theme.hero.h1.lineHeight};
           text-remove-gap: both 0 "Open Sans";
+          width: 80%;
+          height: 366px;
 
           :global(strong) {
             position: relative;

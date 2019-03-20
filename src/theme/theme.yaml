@@ -56,10 +56,10 @@ color:
   brand:
     primary: &color-brand-primary '#709425'
     primaryActive: '#709425'
-    light: '#709425'
+    light: '#fff2e7'
     lightActive: '#709425'
-    dark: '#709425'
-    darkActive: '#709425'
+    dark: '#393939'
+    darkActive: '#ff5a09'
   special:
     attention: &color-special-attention orange
 # FONT
@@ -133,7 +133,7 @@ icon:
 # COMPONENT TOKENS
 hero:
   h1:
-    size: *font-size-xxl
+    size: *font-size-l
     color: *color-gray-10
     lineHeight: *font-line-height-xs
   background: 'linear-gradient(0deg, #E0306E, #6438B5)'
