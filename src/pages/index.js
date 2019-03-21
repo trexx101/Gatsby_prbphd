@@ -53,18 +53,25 @@ class IndexPage extends React.Component {
             <Hero scrollToContent={this.scrollToContent} backgrounds={backgrounds} theme={theme} />
           )}
         </ThemeContext.Consumer>
-        <div className="gap"></div>
-        <div className="gap"></div>
-        <Container className="pt-4 mb-7 pb-6">
-          <h1>Testimonials</h1>
-          <SimpleSlider></SimpleSlider>
-        </Container>
-        <div className="gap"></div>
+
         <div className="gap"></div>
         <div className="gap"></div>
 
-        <Container className="pt-4 mb-7 pb-6">
-          <h1 className="mb-4">Get Quotation</h1>
+        <div className="container container-fluid padding my-4">
+          <div className="row">
+            <div className="col">
+              <h1 className="padding my-4">Testimonials</h1>
+              <SimpleSlider></SimpleSlider>
+            </div>
+          </div>
+        </div>
+
+        <div className="gap"></div>
+        <hr className="my-4"/>
+        <div className="gap"></div>
+        
+        <div className="container container-fluid padding my-4">
+          <h1 className="padding my-4">Get Quotation</h1>
           <Row>
             <Col md={{ size: 6 }}>
             <div className="mb-4">
@@ -74,37 +81,43 @@ class IndexPage extends React.Component {
             </div>
             <Form>
                 <ButtonGroup className="mr-3 mb-3 ">
-                  <Button color="primary">Uoload manuscript</Button>
+                  <Button color="primary">Upload manuscript</Button>
                   <Button color="primary">Get consultation</Button>
                 </ButtonGroup>
             </Form>
             </Col>
             <Col md={{ size: 4 }}>
-            <img src={avatar6} alt="quote image"className="quote" />
+            <img src={avatar6} alt="quote image"className="quote img-fluid" />
             </Col>
           </Row>
-        </Container>
-        <hr/>
+        </div>
+        
         <div className="gap"></div>
+        <hr className="my-4" />
         <div className="gap"></div>
-        <Container className="pt-4 mb-7 pb-6">
+
+        <div className="container container-fluid padding my-4">
           <h1 className=" mb-4">Our Work</h1>
           <WorkTable/>
-        </Container>
-        <hr/>
+        </div>
+
         <div className="gap"></div>
+        <hr className="my-4" />
         <div className="gap"></div>
-        <Container className="pt-4 mb-7 pb-6">
+
+        <div className="container container-fluid padding my-4">
           <h1 className=" mb-4">Our Workshop</h1>
           <Slido/>
-        </Container>
-        <hr/>
+        </div>
+
         <div className="gap"></div>
+        <hr className="my-4" />
         <div className="gap"></div>
-        <Container className="pt-4 mb-7 pb-6">
+
+        <div className="container container-fluid padding my-4">
           <h1 className=" mb-4">Our Trusted Publishers, Journals and Institutions</h1>
           <Collab/>
-        </Container>
+        </div>
 
         <Seo facebook={facebook} />
 
