@@ -15,6 +15,7 @@ export default class WorkTable extends React.Component {
   }
 
   toggle(tab) {
+    //todo, pls remove this function empty the state
     if (this.state.activeTab !== tab) {
       this.setState({
         activeTab: tab
@@ -23,99 +24,54 @@ export default class WorkTable extends React.Component {
   }
   render() {
     return (
-      <div className="mb-6">
-        <Nav tabs>
-          <NavItem>
-            <NavLink
-              className={classnames({ active: this.state.activeTab === '1' })}
-              onClick={() => { this.toggle('1'); }}
-            >
-              Papers Done
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              className={classnames({ active: this.state.activeTab === '2' })}
-              onClick={() => { this.toggle('2'); }}
-            >
-              Contents
-            </NavLink>
-          </NavItem>
-        </Nav>
-        <TabContent activeTab={this.state.activeTab}>
-          <TabPane tabId="1">
-            <Row className="my-3">
-              <Col className="mx-3">
+      <div className="row padding">
+        <div className="col-xs-12 col-sm-12 col-md-6">
+          <div className="padding">
+            <h4>Content</h4>
+            <div className="row">
+              <div className="col-xs-4 col-sm-6 col-md-4 padding">
                 <CardOverlay></CardOverlay>
-              </Col>
-              <Col >
                 <CardOverlay></CardOverlay>
-              </Col>
-              <Col >
                 <CardOverlay></CardOverlay>
-              </Col>
-              <Col >
+              </div>
+              <div className="col-xs-4 col-sm-6 col-md-4">
                 <CardOverlay></CardOverlay>
-              </Col>
-              <Col >
                 <CardOverlay></CardOverlay>
-              </Col>
-            </Row>
-            <Row className="my-3">
-              <Col className="mx-3">
                 <CardOverlay></CardOverlay>
-              </Col>
-              <Col >
+              </div>
+              <div className="col-xs-4 col-sm-6 col-md-4">
                 <CardOverlay></CardOverlay>
-              </Col>
-              <Col >
                 <CardOverlay></CardOverlay>
-              </Col>
-              <Col >
                 <CardOverlay></CardOverlay>
-              </Col>
-              <Col >
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div className="col-xs-12 col-sm-12 col-md-6">
+          <div className="padding">
+            <h4>Papers</h4>
+            <div className="row">
+              <div className="col-xs-4 col-sm-6 col-md-4 padding">
                 <CardOverlay></CardOverlay>
-              </Col>
-            </Row>
-          </TabPane>
-          <TabPane tabId="2">
-          <Row className="my-3">
-              <Col className="mx-3">
                 <CardOverlay></CardOverlay>
-              </Col>
-              <Col >
                 <CardOverlay></CardOverlay>
-              </Col>
-              <Col >
+              </div>
+              <div className="col-xs-4 col-sm-6 col-md-4">
                 <CardOverlay></CardOverlay>
-              </Col>
-              <Col >
                 <CardOverlay></CardOverlay>
-              </Col>
-              <Col >
                 <CardOverlay></CardOverlay>
-              </Col>
-            </Row>
-            <Row className="my-3">
-              <Col className="mx-3">
+              </div>
+              <div className="col-xs-4 col-sm-6 col-md-4">
                 <CardOverlay></CardOverlay>
-              </Col>
-              <Col >
                 <CardOverlay></CardOverlay>
-              </Col>
-              <Col >
                 <CardOverlay></CardOverlay>
-              </Col>
-              <Col >
-                <CardOverlay></CardOverlay>
-              </Col>
-              <Col >
-                <CardOverlay></CardOverlay>
-              </Col>
-            </Row>
-          </TabPane>
-        </TabContent>
+              </div>
+              
+            </div>
+
+          </div>
+        </div>
       </div>
     );
   }

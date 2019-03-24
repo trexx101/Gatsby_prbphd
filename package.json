@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hero-blog",
+  "name": "proofreading",
   "version": "1.0.0",
-  "author": "Greg Lobinski <greglobinski@gmail.com>",
+  "author": "Proofreading by a UK PHD <proofreadingbyukphd@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.15",

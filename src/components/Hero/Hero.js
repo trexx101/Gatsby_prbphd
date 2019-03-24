@@ -176,7 +176,6 @@ const Hero = props => {
           align-items: center;
           min-height: 100vh;
           padding: ${theme.space.inset.l};
-          padding-top: ${theme.header.height.homepage};
         }
 
         .href {

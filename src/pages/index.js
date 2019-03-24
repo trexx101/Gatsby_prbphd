@@ -9,6 +9,8 @@ import WorkTable from "../components/Article/WorkTable";
 import Collab from "../components/Article/Collab";
 import SimpleSlider from "../components/Slider/SimpleSlider";
 import Slido from "../components/Article/Slider";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngry } from '@fortawesome/free-solid-svg-icons';
 import { Button, Container } from 'reactstrap';
 //import { Col } from "antd";
 import { Row, Col, Form, FormGroup, Label, Input, ButtonGroup } from 'reactstrap';
@@ -54,8 +56,33 @@ class IndexPage extends React.Component {
           )}
         </ThemeContext.Consumer>
 
-        <div className="gap"></div>
-        <div className="gap"></div>
+        <div className="jumbotron padding awards">
+          <div className="row text-center padding">
+            <div className="col-xs-12 col-sm-6 col-md-4">
+              <span className="goldmetal">
+                <i className="fas fa-award fa-4x"></i>
+              </span>
+              <h5 className="text-white">Corning outstanding paper award california</h5>
+              
+            </div>
+            <div className="col-xs-12 col-sm-6 col-md-4">
+            <span className="goldmetal">
+              <i className="fas fa-award fa-4x"></i>
+            </span>
+            <h4 className="text-white">Outstanding paper award california</h4>
+              
+            </div>
+            <div className="col-xs-12 col-sm-6 col-md-4">
+            <span className="goldmetal">
+              <i className="fas fa-award fa-4x"></i>
+            </span>
+            <h4 className="text-white">IEEE Professional award, Macau</h4>
+              <p>
+              </p>
+            </div>
+            
+          </div>
+        </div>
 
         <div className="container container-fluid padding my-4">
           <div className="row">
@@ -132,6 +159,12 @@ class IndexPage extends React.Component {
           .quote {
             max-width: 100%;
             height: auto;
+          }
+          .awards{
+            background-color: #393939;
+          }
+          .goldmetal{
+            color: 	#FFA500;
           }
         `}</style>
       </React.Fragment>

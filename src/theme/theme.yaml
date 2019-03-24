@@ -41,8 +41,8 @@ color:
   neutral:
     white: &color-white '#ffffff'
     gray:
-      a: &color-gray-1 '#fafaf9'
-      b: &color-gray-2 '#f3f2f2'
+      a: &color-gray-1 '#6b6b6b'
+      b: &color-gray-2 '#393939'
       c: &color-gray-3 '#ecebea'
       d: '#dddbda'
       e: '#c9c7c5'
@@ -61,7 +61,7 @@ color:
     dark: '#393939'
     darkActive: '#ff5a09'
   special:
-    attention: &color-special-attention orange
+    attention: &color-special-attention '#ff5a09'
 # FONT
 font:
   # font options
