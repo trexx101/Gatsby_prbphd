@@ -37,7 +37,7 @@ module.exports = {
       appId: process.env.ALGOLIA_APP_ID ? process.env.ALGOLIA_APP_ID : "1212212142",
       searchOnlyApiKey: process.env.ALGOLIA_SEARCH_ONLY_API_KEY
         ? process.env.ALGOLIA_SEARCH_ONLY_API_KEY
-        : "12312312",
+        : "123123123",
       indexName: process.env.ALGOLIA_INDEX_NAME ? process.env.ALGOLIA_INDEX_NAME : ""
     },
     facebook: {

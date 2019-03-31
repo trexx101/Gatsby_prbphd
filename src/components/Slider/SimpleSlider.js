@@ -3,32 +3,35 @@ import Slider from "react-slick";
 import { Card, CardText, CardTitle, Row, Col } from 'reactstrap';
 import { Link } from "react-router-dom";
 import Avatar from "../Util/Avatar";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faIgloo } from '@fortawesome/free-solid-svg-icons';
+
+import areas from "../../images/testimonials/ahmed.jpg"; 
+import chai from "../../images/testimonials/hamimi.jpg";
+import presc from "../../images/testimonials/jeslyn.jpg";
+import hmk from "../../images/testimonials/hmk.jpg";
 const items = [
     {
-      name: 'Mok Yuky',
+      name: 'Jeslyn Wong',
       role: '- Student',
-      link: 'https://source.unsplash.com/random/80x80',
-      quote: 'Thank you Proofreading by a UK PhD! Great services! I would highly recommend because they\'re trustable. They helped to review and edit my whole dissertation, also providing SPSS consultation services for my master dissertation. Thank you!'
+      link: presc,
+      quote: 'Thank you Dr Thava for helping me to solve problems in dissertation paper. I have received a good experience from them in terms of delivery. They have consulted on SPSS and edited the whole thesis and i’m glad that my friend recommended them to me. In terms of customer service,they were extremely efficient to reply my questions and i was able to meet my thesis deadline. I would highly recommend them to my friends in future!!'
     },
     {
       name: 'Hmk Nazrul Hakimi',
-      role: '- Joker',
-      link: 'https://source.unsplash.com/random/81x81',
+      role: '- Student',
+      link: hmk,
       quote: 'Last time, my friend recommended Dr Thava as a proofreader and editor to ensure the highest possible quality of my work. He did not disappoint!. Now, my manuscript has been accepted to publish in one of the leading journal in road safety study. From the first point of contact, Dr Thava and his team from #ProofreadingbyaUKPhD was professional and showed great commitment to their work. Dr Thava\’s edits and formatting work are impeccable and significantly improved the quality and fluency of my manuscript. I highly recommend him as an editor and proofreader!'
     },
     {
-      name: 'Saras Andy',
-      role: '- Teacher',
-      link: 'https://source.unsplash.com/random/82x82',
-      quote: 'DR. Thavamaran @ ProofreadingbyPhD service- added an extra layer of professional to my thesis. His work is impeccable, very professional and thoroughly edited my thesis with precise. DR. Thava was able to edit according to my specific needs and even monitored my contents, always never missed deadlines, and flawless in ensuring consistency of style and terminology...'
+      name: 'Ahmed A. Zaid',
+      role: '- Student',
+      link: areas,
+      quote: 'Thanks a lot, Proofreading by a UK Ph.D. It\'s was really awesome to work with you. Finally, the paper was accepted and published in the 😀👌👌👌Journal of cleaner production (impact factor 5.621)'
     },
     {
-      name: 'Michelle Chai',
-      role: '- Teacher',
-      link: 'https://source.unsplash.com/random/82x81',
-      quote: 'Dr Thava and the team has demonstrated an extensive proofreading service in a short amount of time. The team has also established an ethical consideration by refunding client who has had written well in the first submission. All in all, I\'d recommend this proofreading service to all postgraduate students seeking to have a more quality work done before submitting the paper for evaluation. Thanks once again!'
+      name: 'Hazmimi Hasim',
+      role: '- PHD Student',
+      link: chai,
+      quote: 'I am pleased to announce that my paper with P.M Dr. Che Rosmani Che Hassan and Dr Mahar Diana of University of Malaya has been published in the Safety Science Journal ( IF 3.1, Q1), it is the most prestigious journal in its area. My great gratitude to Dr Thavamaran Kanesan\'s continuous support via the Proofreading by UK PhD. He and his team have remarkably proofread the paper, and supported us throughout the review process. It was an excellent collaboration.'
     }
   ];
 

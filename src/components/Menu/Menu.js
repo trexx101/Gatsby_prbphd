@@ -5,8 +5,11 @@ require("core-js/fn/array/from");
 import FaHome from "react-icons/lib/fa/home";
 import FaSearch from "react-icons/lib/fa/search";
 import FaEnvelope from "react-icons/lib/fa/envelope";
-import FaTag from "react-icons/lib/fa/tag";
+import FaClip from "react-icons/lib/fa/clipboard";
+import FaIndustry from "react-icons/lib/fa/industry";
 import { SocialIcon } from 'react-social-icons';
+
+import {FacebookProvider, Page  }  from 'react-facebook';
 
 import Item from "./Item";
 import Expand from "./Expand";
@@ -25,6 +28,8 @@ class Menu extends React.Component {
 
     this.items = [
       { to: "/", label: "Home", icon: FaHome },
+      { to: "/about/", label: "About", icon: FaIndustry },
+      { to: "/papers/", label: "Papers", icon: FaClip },
       //{ to: "/category/", label: "Categories", icon: FaTag },
       // { to: "/search/", label: "Search", icon: FaSearch },
       ...pages,
@@ -155,9 +160,16 @@ class Menu extends React.Component {
               <Item item={itm} key={itm.label} icon={itm.icon} theme={theme} />
               
             ))}
-            <SocialIcon url="https://www.facebook.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3, marginLleft:4 }} bgColor="#ff5a01" />
-            <SocialIcon url="https://www.twitter.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" />
-            <SocialIcon url="https://www.whatsapp.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" network="whatsapp" />
+            <div className="d-flex flex-column">
+            
+            <div className="p-2">
+              <SocialIcon url="https://www.facebook.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3, marginLleft:4 }} bgColor="#ff5a01" />
+              <SocialIcon url="https://www.twitter.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" />
+              <SocialIcon url="https://www.whatsapp.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" network="whatsapp" />
+            </div>
+               
+            </div>
+            
           </ul>
           {this.state.hiddenItems.length > 0 && <Expand onClick={this.toggleMenu} theme={theme} />}
           {open &&

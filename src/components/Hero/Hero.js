@@ -4,6 +4,7 @@ import Particles from "react-particles-js";
 import { Col, Table } from 'reactstrap';
 
 import FaArrowDown from "react-icons/lib/fa/arrow-down";
+import {FacebookProvider, Page  }  from 'react-facebook';
 const fbGroup = '<div class="fb-group" data-href="https://www.facebook.com/proofreadingbyPhD/" data-width="280" data-show-social-context="true" data-show-metadata="false"></div>';
 
 const Hero = props => {
@@ -130,33 +131,38 @@ const Hero = props => {
           }}
         />
         <div className="href row ">
-        <div className="col-md-9 col-sm-12 my-sm-5">
-        <div className="justify-content-start">
-        <h2 className="mb-4">Research paper and Manuscript editing</h2>
-        <p>
-          Have you Document proofreading done by proffessionals
-          
-        </p>
-        </div>
-        
+        <div className="col-md-6 col-sm-12 my-sm-5">
+          <div className="justify-content-start">
+            <h2 className="mb-4">Research paper and Manuscript editing</h2>
+            <p>
+              Have you Document proofreading done by proffessionals
+              
+            </p>
+          </div>
         </div>
         <div className="col-md-offset-3 col-md-2">
-        <div className="justify-content-end">
-        <Table hover>
-        <tbody>
-          <tr>
-            <td>300+ Papers Reviewed</td>
-          </tr>
-          <tr>
-            <td>30+ Universities</td>
-          </tr>
-          <tr>
-            <td>20,343+ Facebook following</td>
-          </tr>
-        </tbody>
-      </Table>
+          <div className="justify-content-end">
+            <Table hover>
+              <tbody>
+                <tr>
+                  <td>300+ Papers Reviewed</td>
+                </tr>
+                <tr>
+                  <td>30+ Universities</td>
+                </tr>
+                <tr>
+                  <td>20,343+ Facebook following</td>
+                </tr>
+              </tbody>
+            </Table>
+          </div>
         </div>
-        
+        <div className="col-md-offset-3 col-md-4">
+          <div className="justify-content-end">
+          <FacebookProvider appId="240220023355857">
+                <Page href="https://www.facebook.com/pg/proofreadingbyPhD" />
+              </FacebookProvider>
+          </div>
         </div>
         </div>
         
@@ -187,7 +193,7 @@ const Hero = props => {
           color: ${theme.hero.h1.color};
           line-height: ${theme.hero.h1.lineHeight};
           text-remove-gap: both 0 "Open Sans";
-          width: 80%;
+          width: 94%;
           height: 366px;
 
           :global(strong) {

@@ -46,7 +46,7 @@ const Footer = props => {
                   </div>
                   <div className="col-md-10">
                   <h5>CONTACT US</h5>
-                    <p>+60 (0) 99 87 65 43 21</p>
+                    <p>+60 17 671 2515</p>
                   </div>
                 </div>
                 </div>

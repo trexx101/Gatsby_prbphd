@@ -9,12 +9,24 @@ import WorkTable from "../components/Article/WorkTable";
 import Collab from "../components/Article/Collab";
 import SimpleSlider from "../components/Slider/SimpleSlider";
 import Slido from "../components/Article/Slider";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngry } from '@fortawesome/free-solid-svg-icons';
-import { Button, Container } from 'reactstrap';
+import { Button, Container } from "reactstrap";
 //import { Col } from "antd";
-import { Row, Col, Form, FormGroup, Label, Input, ButtonGroup } from 'reactstrap';
+import {
+  Row,
+  Col,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  ButtonGroup,
+  CardBody,
+  Card,
+  UncontrolledCollapse
+} from "reactstrap";
 import avatar6 from "../images/slider/james.png";
+import background from "../images/jpg/collage.jpg";
+
+
 
 class IndexPage extends React.Component {
   separator = React.createRef();
@@ -56,94 +68,123 @@ class IndexPage extends React.Component {
           )}
         </ThemeContext.Consumer>
 
-        <div className="jumbotron padding awards">
+        <div className="jumbotron awards">
           <div className="row text-center padding">
             <div className="col-xs-12 col-sm-6 col-md-4">
               <span className="goldmetal">
-                <i className="fas fa-award fa-4x"></i>
+                <i className="fas fa-award fa-4x" />
               </span>
               <h5 className="text-white">Corning outstanding paper award california</h5>
-              
             </div>
             <div className="col-xs-12 col-sm-6 col-md-4">
-            <span className="goldmetal">
-              <i className="fas fa-award fa-4x"></i>
-            </span>
-            <h4 className="text-white">Outstanding paper award california</h4>
-              
+              <span className="goldmetal">
+                <i className="fas fa-award fa-4x" />
+              </span>
+              <h5 className="text-white">Outstanding paper award california</h5>
             </div>
             <div className="col-xs-12 col-sm-6 col-md-4">
-            <span className="goldmetal">
-              <i className="fas fa-award fa-4x"></i>
-            </span>
-            <h4 className="text-white">IEEE Professional award, Macau</h4>
-              <p>
-              </p>
+              <span className="goldmetal">
+                <i className="fas fa-award fa-4x" />
+              </span>
+              <h5 className="text-white">IEEE Professional award, Macau</h5>
+              <p />
             </div>
-            
           </div>
         </div>
-
-        <div className="container container-fluid padding my-4">
+        <div className="backgrounder">
+        <div
+          className="container container-fluid padding mb-4 "
+        >
           <div className="row">
             <div className="col">
-              <h1 className="padding my-4">Testimonials</h1>
-              <SimpleSlider></SimpleSlider>
+              <h1 className="padding my-4 pb-4">Testimonials</h1>
+              <SimpleSlider />
+              <div className="d-flex justify-content-center mt-4">
+                <Button>Read more testimonials</Button>
+              </div>
             </div>
+            <div className="row" />
           </div>
         </div>
-
-        <div className="gap"></div>
-        <hr className="my-4"/>
-        <div className="gap"></div>
+        </div>
         
+
+        <div className="gap" />
+        <hr className="my-4" />
+        <div className="gap" />
+
         <div className="container container-fluid padding my-4">
           <h1 className="padding my-4">Get Quotation</h1>
           <Row>
             <Col md={{ size: 6 }}>
-            <div className="mb-4">
-              <h3 className="mb-4">If you would like to hear more ...</h3>
-              <p className="mb-4">We have a simple and friendly business model you can try out this service by uploading your document and we will process your doucment and have it sent to our panel of professional proof readers</p>
-              
-            </div>
-            <Form>
+              <div className="mb-4">
+                <h3 className="mb-4">If you would like to hear more ...</h3>
+                <p className="mb-4">
+                  We have a simple and friendly business model you can try out this service by
+                  uploading your document and we will process your doucment and have it sent to our
+                  panel of professional proof readers
+                </p>
+              </div>
+              <Form>
                 <ButtonGroup className="mr-3 mb-3 ">
                   <Button color="primary">Upload manuscript</Button>
-                  <Button color="primary">Get consultation</Button>
                 </ButtonGroup>
-            </Form>
+                <div>
+                  <Button color="primary" id="toggler" style={{ marginBottom: "1rem" }}>
+                    More services
+                  </Button>
+                  <UncontrolledCollapse toggler="#toggler">
+                    <Card>
+                      <CardBody>
+                        <Row>
+                          <Button className="my-1 mx-1">Research and consultation</Button>
+                          <Button className="my-1 mx-1">Thesis consultation</Button>
+                          <Button className="my-1 mx-1">SMART PLS / SPSS / AMOS</Button>
+                          <Button className="my-1 mx-1">Atlas.Ti / Nvivo</Button> <Button className="my-1 mx-1">CV / RESEARCH STATEMENT</Button>
+                        </Row>
+                      </CardBody>
+                    </Card>
+                  </UncontrolledCollapse>
+                </div>
+              </Form>
             </Col>
             <Col md={{ size: 4 }}>
-            <img src={avatar6} alt="quote image"className="quote img-fluid" />
+              <img src={avatar6} alt="quote image" className="quote img-fluid" />
             </Col>
           </Row>
         </div>
-        
-        <div className="gap"></div>
+
+        <div className="gap" />
         <hr className="my-4" />
-        <div className="gap"></div>
+        <div className="gap" />
 
         <div className="container container-fluid padding my-4">
           <h1 className=" mb-4">Our Work</h1>
-          <WorkTable/>
+          <WorkTable />
         </div>
 
-        <div className="gap"></div>
+        <div className="gap" />
         <hr className="my-4" />
-        <div className="gap"></div>
+        <div className="gap" />
 
         <div className="container container-fluid padding my-4">
-          <h1 className=" mb-4">Our Workshop</h1>
-          <Slido/>
+          <h1 className=" mb-4">Upcoming Events</h1>
+          <Slido />
+          <div className="d-flex justify-content-center mt-4">
+            <p>Interesting in one one of our Workshops?</p>
+          </div>
+          <div className="d-flex justify-content-center mt-4">
+            <Button>Find out more</Button>
+          </div>
         </div>
 
-        <div className="gap"></div>
+        <div className="gap" />
         <hr className="my-4" />
-        <div className="gap"></div>
+        <div className="gap" />
 
         <div className="container container-fluid padding my-4">
           <h1 className=" mb-4">Our Trusted Publishers, Journals and Institutions</h1>
-          <Collab/>
+          <Collab />
         </div>
 
         <Seo facebook={facebook} />
@@ -153,18 +194,24 @@ class IndexPage extends React.Component {
             margin: 0;
             border: 0;
           }
-          .gap{
-            margin-bottom:50px;
+          .gap {
+            margin-bottom: 50px;
           }
           .quote {
             max-width: 100%;
             height: auto;
           }
-          .awards{
+          .awards {
             background-color: #393939;
           }
-          .goldmetal{
-            color: 	#FFA500;
+          .goldmetal {
+            color: #ffa500;
+          }
+          .backgrounder {
+            background-image: url(${background});
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-size: inherit;
           }
         `}</style>
       </React.Fragment>
