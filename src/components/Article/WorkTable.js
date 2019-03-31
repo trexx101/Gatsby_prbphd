@@ -10,13 +10,13 @@ import content4 from "../../images/content/orgnizing.jpg";
 import content5 from "../../images/content/problem_statement.jpg";
 import content6 from "../../images/content/writing_dissertation.jpg";
 
-import paper0 from "../../images/papers/Slide2.jpg";
-import paper1 from "../../images/papers/Slide3.jpg";
-import paper2 from "../../images/papers/Slide4.jpg";
-import paper3 from "../../images/papers/Slide7.jpg";
-import paper4 from "../../images/papers/Slide35.jpg";
-import paper5 from "../../images/papers/Slide37.jpg";
-import paper6 from "../../images/papers/Slide40.jpg";
+import paper0 from "../../images/papers/Slide2.png";
+import paper1 from "../../images/papers/Slide3.png";
+import paper2 from "../../images/papers/Slide4.png";
+import paper3 from "../../images/papers/Slide7.png";
+//import paper4 from "../../images/papers/Slide35.png";
+import paper5 from "../../images/papers/Slide37.png";
+import paper6 from "../../images/papers/Slide40.png";
 
 
 export default class WorkTable extends React.Component {
@@ -73,12 +73,12 @@ export default class WorkTable extends React.Component {
                 <CardOverlay data={paper3}></CardOverlay>
               </div>
               <div className="col-xs-4 col-sm-6 col-md-4">
-                <CardOverlay data={paper4}></CardOverlay>
+                <CardOverlay data={paper2}></CardOverlay>
                 <CardOverlay data={paper5}></CardOverlay>
                 <CardOverlay data={paper6}></CardOverlay>
               </div>
               <div className="col-xs-4 col-sm-6 col-md-4">
-                <CardOverlay data={paper2}></CardOverlay>
+                <CardOverlay data={paper0}></CardOverlay>
                 <CardOverlay data={paper2}></CardOverlay>
                 <CardOverlay data={paper2}></CardOverlay>
               </div>
