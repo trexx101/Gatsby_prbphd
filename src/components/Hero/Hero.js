@@ -133,9 +133,9 @@ const Hero = props => {
         <div className="href row ">
         <div className="col-md-6 col-sm-12 my-sm-7">
           <div className="justify-content-start">
-            <h2 className="mb-4">Research paper and Manuscript editing</h2>
+            <h2 className="mb-4">Research Paper Publication. Simplified...</h2>
             <p>
-              Have you Document proofreading done by proffessionals
+            Subject expertise, personalized support, and 100% quality guarantee.
               
             </p>
           </div>

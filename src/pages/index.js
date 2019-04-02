@@ -100,7 +100,8 @@ class IndexPage extends React.Component {
               <h1 className="padding my-4 pb-4">Testimonials</h1>
               <SimpleSlider />
               <div className="d-flex justify-content-center mt-4">
-                <Button>Read more testimonials</Button>
+                <Button href="https://bit.ly/ProofReviews"
+                >Read more testimonials</Button>
               </div>
             </div>
             <div className="row" />
@@ -153,7 +154,7 @@ class IndexPage extends React.Component {
             </Col>
           </Row>
         </div>
-
+        <div className="gap" />
         <div className="gap" />
         <hr className="my-4" />
         <div className="gap" />
@@ -162,7 +163,7 @@ class IndexPage extends React.Component {
           <h1 className=" mb-4">Our Work</h1>
           <WorkTable />
         </div>
-
+        <div className="gap" />
         <div className="gap" />
         <hr className="my-4" />
         <div className="gap" />
