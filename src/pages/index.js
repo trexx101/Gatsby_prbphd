@@ -68,7 +68,7 @@ class IndexPage extends React.Component {
           )}
         </ThemeContext.Consumer>
 
-        <div className="jumbotron awards">
+        <div className="jumbotron awards mb-0">
           <div className="row text-center padding">
             <div className="col-xs-12 col-sm-6 col-md-4">
               <span className="goldmetal">
@@ -148,7 +148,7 @@ class IndexPage extends React.Component {
                 </div>
               </Form>
             </Col>
-            <Col md={{ size: 4 }}>
+            <Col md={{ size: 6 }}>
               <img src={avatar6} alt="quote image" className="quote img-fluid" />
             </Col>
           </Row>
@@ -190,6 +190,7 @@ class IndexPage extends React.Component {
         <Seo facebook={facebook} />
 
         <style jsx>{`
+
           .hr {
             margin: 0;
             border: 0;
@@ -203,6 +204,7 @@ class IndexPage extends React.Component {
           }
           .awards {
             background-color: #393939;
+            
           }
           .goldmetal {
             color: #ffa500;

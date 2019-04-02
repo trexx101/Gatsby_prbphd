@@ -152,16 +152,19 @@ class Menu extends React.Component {
     return (
       <React.Fragment>
         <nav className={`menu ${open ? "open" : ""}`} rel="js-menu">
+        
           <ul className="itemList" ref={this.itemList}>
             {this.items.map(item => (
               <Item item={item} key={item.label} icon={item.icon} theme={theme} />
             ))}
             {this.quotepage.map(itm => (
-              <Item item={itm} key={itm.label} icon={itm.icon} theme={theme} />
+              <Item className="" item={itm} key={itm.label} icon={itm.icon} theme={theme} />
               
             ))}
-            <div className="d-flex flex-column">
-            
+            <div className="d-flex flex-column mypad">
+              <FacebookProvider appId="240220023355857">
+                <Page href="https://www.facebook.com/pg/proofreadingbyPhD" width="300" height="80"/>
+              </FacebookProvider>
             <div className="p-2">
               <SocialIcon url="https://www.facebook.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3, marginLleft:4 }} bgColor="#ff5a01" />
               <SocialIcon url="https://www.twitter.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" />
@@ -197,6 +200,10 @@ class Menu extends React.Component {
             width: 100%;
             z-index: 1;
             transition: all ${theme.time.duration.default};
+          }
+          .mypad{
+            padding-top: 5rem;
+
           }
 
           .itemList {
@@ -246,6 +253,10 @@ class Menu extends React.Component {
             .itemList {
               justify-content: flex-end;
               padding: 0;
+            }
+            .green{
+              background-color: #4CAF50;
+              color: tomato;
             }
 
             .hiddenItemList {

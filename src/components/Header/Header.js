@@ -112,10 +112,10 @@ class Header extends React.Component {
 
           .logo {
             display: inline-block;
-            height: 48px;
+            height: 59px;
             margin: ${theme.space.inline.default};
             overflow: hidden;
-            width: 48px;
+            width: 59px;
             transition: all 0.5s;
 
             .homepage & {
@@ -217,8 +217,8 @@ class Header extends React.Component {
               margin: ${theme.space.inline.default};
 
               .fixed & {
-                height: 36px;
-                width: 36px;
+                height: 48px;
+                width: 48px;
               }
 
               .header.homepage:not(.fixed) & {

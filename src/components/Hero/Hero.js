@@ -131,7 +131,7 @@ const Hero = props => {
           }}
         />
         <div className="href row ">
-        <div className="col-md-6 col-sm-12 my-sm-5">
+        <div className="col-md-6 col-sm-12 my-sm-7">
           <div className="justify-content-start">
             <h2 className="mb-4">Research paper and Manuscript editing</h2>
             <p>
@@ -140,7 +140,7 @@ const Hero = props => {
             </p>
           </div>
         </div>
-        <div className="col-md-offset-3 col-md-2">
+        <div className="col-md-offset-3 col-md-4">
           <div className="justify-content-end">
             <Table hover>
               <tbody>
@@ -157,13 +157,7 @@ const Hero = props => {
             </Table>
           </div>
         </div>
-        <div className="col-md-offset-3 col-md-4">
-          <div className="justify-content-end">
-          <FacebookProvider appId="240220023355857">
-                <Page href="https://www.facebook.com/pg/proofreadingbyPhD" />
-              </FacebookProvider>
-          </div>
-        </div>
+        
         </div>
         
       </section>
