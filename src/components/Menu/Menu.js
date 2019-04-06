@@ -10,6 +10,7 @@ import FaIndustry from "react-icons/lib/fa/industry";
 import { SocialIcon } from 'react-social-icons';
 
 import {FacebookProvider, Page  }  from 'react-facebook';
+import { Row } from "reactstrap";
 
 import Item from "./Item";
 import Expand from "./Expand";
@@ -152,36 +153,41 @@ class Menu extends React.Component {
     return (
       <React.Fragment>
         <nav className={`menu ${open ? "open" : ""}`} rel="js-menu">
-        
+        <div>
           <ul className="itemList" ref={this.itemList}>
             {this.items.map(item => (
               <Item item={item} key={item.label} icon={item.icon} theme={theme} />
             ))}
             {this.quotepage.map(itm => (
-              <Item className="" item={itm} key={itm.label} icon={itm.icon} theme={theme} />
+              <Item green item={itm} key={itm.label} icon={itm.icon} theme={theme} />
               
             ))}
             <div className="d-flex flex-column mypad">
               <FacebookProvider appId="240220023355857">
-                <Page href="https://www.facebook.com/pg/proofreadingbyPhD" width="300" height="80"/>
+                <Page href="https://www.facebook.com/pg/proofreadingbyPhD" width="350" height="150"/>
               </FacebookProvider>
             <div className="p-2">
               <SocialIcon url="https://www.facebook.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3, marginLleft:4 }} bgColor="#ff5a01" />
               <SocialIcon url="https://www.twitter.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" />
               <SocialIcon url="https://www.whatsapp.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" network="whatsapp" />
+              <SocialIcon url="https://www.instagram.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" network="whatsapp" />
             </div>
-               
             </div>
             
           </ul>
+          
+          </div>
           {this.state.hiddenItems.length > 0 && <Expand onClick={this.toggleMenu} theme={theme} />}
           {open &&
             screenWidth >= 1024 && (
+              <div>
               <ul className="hiddenItemList">
                 {this.state.hiddenItems.map(item => (
                   <Item item={item} key={item.label} hiddenItem theme={theme} />
                 ))}
               </ul>
+              
+            </div>
             )}
         </nav>
 
@@ -202,7 +208,7 @@ class Menu extends React.Component {
             transition: all ${theme.time.duration.default};
           }
           .mypad{
-            padding-top: 5rem;
+            padding-top: 9rem;
 
           }
 

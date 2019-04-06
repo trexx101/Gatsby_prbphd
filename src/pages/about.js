@@ -3,7 +3,7 @@ import React from "react";
 
 import { ThemeContext } from "../layouts";
 import Seo from "../components/Seo";
-import WorkTable from "../components/Article/WorkTable";
+import Team from "../components/Article/Team";
 import Collab from "../components/Article/Collab";
 import SimpleSlider from "../components/Slider/SimpleSlider";
 import Slido from "../components/Article/Slider";
@@ -50,6 +50,7 @@ class AboutPage extends React.Component {
         <div className="gap" />
         <hr className="my-4" />
         <div className="gap" />
+        <br/>
 
         <div className="container container-fluid padding my-4">
           <h1 className="padding my-4">About Us and Services</h1>
@@ -252,6 +253,8 @@ class AboutPage extends React.Component {
           </Row>
           <div className="gap" />
         </div>
+
+        <Team></Team>
 
         <Seo facebook={facebook} />
 

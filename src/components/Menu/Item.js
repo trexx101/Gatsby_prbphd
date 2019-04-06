@@ -5,12 +5,26 @@ import Link from "gatsby-link";
 const Item = props => {
   const { theme, item: { label, to, icon: Icon } = {}, onClick } = props;
 
+  const isGreen = () => {
+    if (props.green){
+      return "green";
+    }
+    return " ";
+  }
+
+  const isHidden = () => {
+    if (props.hiddenItem){
+      return "hiddenItem ";
+    }
+    return "item ";
+  }
+
   return (
     <React.Fragment>
       <li className={"hiddenItem" in props ? "hiddenItem" : "item"} key={label}>
         <Link
           to={to}
-          className={"hiddenItem" in props ? "inHiddenItem" : ""}
+          className={"green"  in props ? "green" : " " }
           onClick={onClick}
           data-slug={to}
         >
@@ -37,17 +51,22 @@ const Item = props => {
             margin: 0 ${theme.space.inset.xs} 0 0;
             opacity: 0.3;
           }
+          :global(.green){
+            background: #4CAF50;
+          }
         }
 
         :global(.itemList .hideItem) {
           display: none;
         }
+        
 
         @from-width desktop {
           .item {
             :global(a) {
               color: ${theme.text.color.primary};
               padding: ${theme.space.inset.s};
+              margin: 2px;
               transition: all ${theme.time.duration.default};
               border-radius: ${theme.size.radius.small};
             }

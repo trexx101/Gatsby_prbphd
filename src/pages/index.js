@@ -26,8 +26,6 @@ import {
 import avatar6 from "../images/slider/james.png";
 import background from "../images/jpg/collage.jpg";
 
-
-
 class IndexPage extends React.Component {
   separator = React.createRef();
 
@@ -92,27 +90,27 @@ class IndexPage extends React.Component {
           </div>
         </div>
         <div className="backgrounder">
-        <div
-          className="container container-fluid padding mb-4 "
-        >
-          <div className="row">
-            <div className="col">
-              <h1 className="padding my-4 pb-4">Testimonials</h1>
-              <SimpleSlider />
-              <div className="d-flex justify-content-center mt-4">
-                <Button href="https://bit.ly/ProofReviews"
-                >Read more testimonials</Button>
+          <div className="container container-fluid padding mb-4 ">
+            <div className="row">
+              <div className="col">
+                <h1 className="padding my-4 pb-4">Testimonials</h1>
+                <SimpleSlider />
               </div>
-            </div>
-            <div className="row" />
+              </div>
+              <div className="row" >
+              <div className="col">
+                <div className="d-flex justify-content-center mt-4">
+                  <Button href="https://bit.ly/ProofReviews">Read more testimonials</Button>
+                </div>
+                <div className="gap" ></div>
+                <div className="gap" ></div>
+              </div>
+            
           </div>
         </div>
         </div>
-        
-
-        <div className="gap" />
-        <hr className="my-4" />
-        <div className="gap" />
+        <br/>
+        <br/>
 
         <div className="container container-fluid padding my-4">
           <h1 className="padding my-4">Get Quotation</h1>
@@ -141,7 +139,8 @@ class IndexPage extends React.Component {
                           <Button className="my-1 mx-1">Research and consultation</Button>
                           <Button className="my-1 mx-1">Thesis consultation</Button>
                           <Button className="my-1 mx-1">SMART PLS / SPSS / AMOS</Button>
-                          <Button className="my-1 mx-1">Atlas.Ti / Nvivo</Button> <Button className="my-1 mx-1">CV / RESEARCH STATEMENT</Button>
+                          <Button className="my-1 mx-1">Atlas.Ti / Nvivo</Button>{" "}
+                          <Button className="my-1 mx-1">CV / RESEARCH STATEMENT</Button>
                         </Row>
                       </CardBody>
                     </Card>
@@ -154,17 +153,17 @@ class IndexPage extends React.Component {
             </Col>
           </Row>
         </div>
-        <div className="gap" />
-        <div className="gap" />
+        
+        <br/>
         <hr className="my-4" />
-        <div className="gap" />
+        <br/>
 
         <div className="container container-fluid padding my-4">
           <h1 className=" mb-4">Our Work</h1>
           <WorkTable />
         </div>
-        <div className="gap" />
-        <div className="gap" />
+        <br/>
+        <br/>
         <hr className="my-4" />
         <div className="gap" />
 
@@ -191,7 +190,6 @@ class IndexPage extends React.Component {
         <Seo facebook={facebook} />
 
         <style jsx>{`
-
           .hr {
             margin: 0;
             border: 0;
@@ -205,7 +203,6 @@ class IndexPage extends React.Component {
           }
           .awards {
             background-color: #393939;
-            
           }
           .goldmetal {
             color: #ffa500;
