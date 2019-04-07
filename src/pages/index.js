@@ -183,7 +183,7 @@ class IndexPage extends React.Component {
         <div className="gap" />
 
         <div className="container container-fluid padding my-4">
-          <h1 className=" mb-4">Our Trusted Publishers, Journals and Institutions</h1>
+          <h1 className=" mb-4">Our Official and Trusted Institutions and Publishers</h1>
           <Collab />
         </div>
 

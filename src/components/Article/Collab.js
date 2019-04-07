@@ -19,8 +19,10 @@ const Collab = (props) => {
           }
         </style>
         
-        <div>
+        
+        <div className="d-flex justify-content-center mt-4">
             <Row className="pt-4">
+            <div className="d-flex justify-content-center mt-4">
             <Col sm="2" md="2">
             <img src={avatar} className="publishers"></img>
             </Col>
@@ -36,6 +38,7 @@ const Collab = (props) => {
             <Col sm="2" md="2">
             <img src={avatar6} className="publishers"></img>
             </Col>
+            </div>
             </Row>
         </div>
     </div>

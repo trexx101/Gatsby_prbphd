@@ -7,7 +7,7 @@ import Team from "../components/Article/Team";
 import Collab from "../components/Article/Collab";
 import SimpleSlider from "../components/Slider/SimpleSlider";
 import Slido from "../components/Article/Slider";
-import { Button, Container } from "reactstrap";
+import { Button, Container, CardHeader, CardFooter, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from "reactstrap";
 //import { Col } from "antd";
 import { Row, Col, Form, ButtonGroup, CardBody, Card, UncontrolledCollapse } from "reactstrap";
 import companyLogo from "../images/logo/imageoflogo.png";
@@ -50,7 +50,7 @@ class AboutPage extends React.Component {
         <div className="gap" />
         <hr className="my-4" />
         <div className="gap" />
-        <br/>
+        <br />
 
         <div className="container container-fluid padding my-4">
           <h1 className="padding my-4">About Us and Services</h1>
@@ -254,7 +254,339 @@ class AboutPage extends React.Component {
           <div className="gap" />
         </div>
 
-        <Team></Team>
+        <Team />
+
+        <Container>
+          <Row className="justify-content-center">
+            <Col lg="12">
+              <h1 className="text-center">Our Services</h1>
+              <Row className="row-grid justify-content-center">
+                <Col lg="3">
+                  <div className="info">
+                    <div className="icon icon-primary">
+                      <i className="tim-icons icon-money-coins" />
+                    </div>
+                    <h4 className="info-title">Proofreading and Editing</h4>
+                    <hr className="line-primary" />
+                    <p>Combined services</p>
+                  </div>
+                </Col>
+                <Col lg="3">
+                  <div className="info">
+                    <div className="icon icon-warning">
+                      <i className="tim-icons icon-chart-pie-36" />
+                    </div>
+                    <h4 className="info-title">Proofreading, Editing and Structuring</h4>
+                    <hr className="line-warning" />
+                    <p>Combined services</p>
+                  </div>
+                </Col>
+                <Col lg="3">
+                  <div className="info">
+                    <div className="icon icon-success">
+                      <i className="tim-icons icon-single-02" />
+                    </div>
+                    <h4 className="info-title">Paraphrasing, Proofreading, and Editing</h4>
+                    <hr className="line-success" />
+                    <p>Combined services</p>
+                  </div>
+                </Col>
+                <Col lg="3">
+                  <div className="info">
+                    <div className="icon icon-success">
+                      <i className="tim-icons icon-single-02" />
+                    </div>
+                    <h4 className="info-title">
+                      Paraphrasing, Proofreading, Editing, and Structuring
+                    </h4>
+                    <hr className="line-success" />
+                    <p>Combined services</p>
+                  </div>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+
+        <div className="container container-fluid padding ">
+          <div className="row">
+            <div className="col">
+              <h1 className="padding my-4 pb-4">Testimonials</h1>
+              <SimpleSlider />
+            </div>
+          </div>
+        </div>
+
+        <section className="section section-lg section-coins">
+          <img alt="..." className="path" src={require("../assets/img/path3.png")} />
+          <Container>
+            <Row>
+              <Col md="4">
+                <hr className="line-info" />
+                <h1>
+                  Choose the package <span className="text-info">that fits your needs</span>
+                </h1>
+              </Col>
+            </Row>
+            <Row>
+              <Col md="4">
+                <Card className="card-coin card-plain">
+                  <CardHeader>
+                    <img
+                      alt="..."
+                      className="img-center img-fluid"
+                      src={require("../assets/img/ripp.png")}
+                    />
+                  </CardHeader>
+                  <CardBody>
+                    <Row>
+                      <Col className="text-center" md="12">
+                        <h4 className="text-uppercase">Small Document</h4>
+                        <span>Below 30 pages</span>
+                        <hr className="line-primary" />
+                      </Col>
+                    </Row>
+                    <Row>
+                      <ListGroup>
+                      <ListGroupItem>
+                          <ListGroupItemHeading>Proofreading & Editing</ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RM 18 / Page
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>
+                            Proofreading, Editing and Structuring
+                          </ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RM 19 / Page
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>
+                            Paraphrasing, Proofreading & Editing
+                          </ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RM 35 / Page
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>
+                            Paraphrasing, Proofreading, Editing & Structuring
+                          </ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RM 40 / Page
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>
+                            Style and Reference Formatting
+                          </ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RM 3.5 / Page
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>
+                          Translation
+
+                          </ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RM 0.30 / word
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>
+                          Research, Thesis, Quantitative, Qualitative, and Career Consultations 
+
+                          </ListGroupItemHeading>
+                          <ListGroupItemText>
+                            contact us
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                      </ListGroup>
+                    </Row>
+                  </CardBody>
+                  <CardFooter className="text-center">
+                    <Button className="btn-simple" color="success">
+                      Get plan
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </Col>
+              <Col md="4">
+                <Card className="card-coin card-plain">
+                  <CardHeader>
+                    <img
+                      alt="..."
+                      className="img-center img-fluid"
+                      src={require("../assets/img/ripp.png")}
+                    />
+                  </CardHeader>
+                  <CardBody>
+                    <Row>
+                      <Col className="text-center" md="12">
+                        <h4 className="text-uppercase">Medium Document</h4>
+                        <span>Below 60 Pages</span>
+                        <hr className="line-success" />
+                      </Col>
+                    </Row>
+                    <Row>
+                      <ListGroup>
+                      <ListGroupItem>
+                          <ListGroupItemHeading>Proofreading & Editing</ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RM 18 / Page
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>
+                            Proofreading, Editing and Structuring
+                          </ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RM 19 / Page
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>
+                            Paraphrasing, Proofreading & Editing
+                          </ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RM 35 / Page
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>
+                            Paraphrasing, Proofreading, Editing & Structuring
+                          </ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RM 40 / Page
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>
+                            <b>Style and Reference Formatting</b>
+                          </ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RM 3.5 / Page
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>
+                          Translation
+
+                          </ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RM 0.30 / word
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>
+                          Research, Thesis, Quantitative, Qualitative, and Career Consultations 
+
+                          </ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contact us
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                      </ListGroup>
+                    </Row>
+                  </CardBody>
+                  <CardFooter className="text-center">
+                    <Button className="btn-simple" color="success">
+                      Get plan
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </Col>
+              <Col md="4">
+                <Card className="card-coin card-plain">
+                  <CardHeader>
+                    <img
+                      alt="..."
+                      className="img-center img-fluid"
+                      src={require("../assets/img/ripp.png")}
+                    />
+                  </CardHeader>
+                  <CardBody>
+                    <Row>
+                      <Col className="text-center" md="12">
+                        <h4 className="text-uppercase">Heavy Document</h4>
+                        <span>Above 100 Pages</span>
+                        <hr className="line-info" />
+                      </Col>
+                    </Row>
+                    <Row>
+                      <ListGroup>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>Proofreading & Editing</ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact us
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>
+                            Proofreading, Editing and Structuring
+                          </ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact us
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>
+                            Paraphrasing, Proofreading & Editing
+                          </ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact us
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>
+                            Paraphrasing, Proofreading, Editing & Structuring
+                          </ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact us
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>
+                            Style and Reference Formatting
+                          </ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact us
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>
+                          Translation
+
+                          </ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact us
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                        <ListGroupItem>
+                          <ListGroupItemHeading>
+                          Research, Thesis, Quantitative, Qualitative, and Career Consultations 
+
+                          </ListGroupItemHeading>
+                          <ListGroupItemText>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact us
+                          </ListGroupItemText>
+                        </ListGroupItem>
+                      </ListGroup>
+                    </Row>
+                  </CardBody>
+                  <CardFooter className="text-center">
+                    <Button className="btn-simple" color="success">
+                      Contact Us
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </Col>
+            </Row>
+          </Container>
+        </section>
 
         <Seo facebook={facebook} />
 
@@ -265,6 +597,9 @@ class AboutPage extends React.Component {
           }
           .gap {
             margin-bottom: 50px;
+          }
+          .icon.icon-success {
+            color: #00f2c3;
           }
           .quote {
             max-width: 100%;

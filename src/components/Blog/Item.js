@@ -115,7 +115,7 @@ const Item = props => {
         .meta {
           display: flex;
           flex-flow: row wrap;
-          font-size: 0.8em;
+          font-size: 0.9em;
           padding: ${theme.space.m} ${theme.space.s};
           background: transparent;
 

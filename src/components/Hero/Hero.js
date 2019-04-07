@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Particles from "react-particles-js";
-import { Col, Table } from 'reactstrap';
+import { Col, Table, Button } from 'reactstrap';
 
 import FaArrowDown from "react-icons/lib/fa/arrow-down";
 import {FacebookProvider, Page  }  from 'react-facebook';
@@ -132,26 +132,40 @@ const Hero = props => {
         />
         <div className="href row ">
         <div className="col-md-6 col-sm-12 my-sm-7">
+        <br/>
+        <br/>
           <div className="justify-content-start">
             <h2 className="mb-4">Research Paper Publication. Simplified...</h2>
             <p>
             Subject expertise, personalized support, and 100% quality guarantee.
               
             </p>
+            <br/>
+            <Button
+                className="btn-simple"
+                color="success"
+                href=""
+                role="button"
+                size="lg"
+              >
+                Submit Manuscript
+              </Button>
           </div>
         </div>
         <div className="col-md-offset-3 col-md-4">
+        <br/>
+        <br/>
           <div className="justify-content-end">
             <Table hover>
               <tbody>
                 <tr>
-                  <td>300+ Papers Reviewed</td>
+                  <td>300+ Papers Edited</td>
                 </tr>
                 <tr>
-                  <td>30+ Universities</td>
+                  <td>30+ Consulted</td>
                 </tr>
                 <tr>
-                  <td>20,343+ Facebook following</td>
+                  <td>20+ Experts</td>
                 </tr>
               </tbody>
             </Table>

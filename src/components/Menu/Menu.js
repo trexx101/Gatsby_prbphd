@@ -170,25 +170,14 @@ class Menu extends React.Component {
               <SocialIcon url="https://www.facebook.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3, marginLleft:4 }} bgColor="#ff5a01" />
               <SocialIcon url="https://www.twitter.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" />
               <SocialIcon url="https://www.whatsapp.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" network="whatsapp" />
-              <SocialIcon url="https://www.instagram.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" network="whatsapp" />
+              <SocialIcon url="https://www.instagram.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" />
             </div>
             </div>
             
           </ul>
           
           </div>
-          {this.state.hiddenItems.length > 0 && <Expand onClick={this.toggleMenu} theme={theme} />}
-          {open &&
-            screenWidth >= 1024 && (
-              <div>
-              <ul className="hiddenItemList">
-                {this.state.hiddenItems.map(item => (
-                  <Item item={item} key={item.label} hiddenItem theme={theme} />
-                ))}
-              </ul>
-              
-            </div>
-            )}
+          
         </nav>
 
         {/* --- STYLES --- */}

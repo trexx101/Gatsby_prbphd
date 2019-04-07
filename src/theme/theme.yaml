@@ -39,7 +39,7 @@ size:
 color:
   # color options
   neutral:
-    white: &color-white '#ffffff'
+    white: &color-white '#171941'
     gray:
       a: &color-gray-1 '#6b6b6b'
       b: &color-gray-2 '#393939'
@@ -50,12 +50,12 @@ color:
       g: '#969492'
       h: '#706e6b'
       i: '#514f4d'
-      j: &color-gray-10 '#3e3e3c'
+      j: &color-gray-10 '#ff5a09'
       k: '#2b2826'
     black: '#000000'
   brand:
-    primary: &color-brand-primary '#709425'
-    primaryActive: '#709425'
+    primary: &color-brand-primary '#ff5a09'
+    primaryActive: '#fff2e7'
     light: '#fff2e7'
     lightActive: '#709425'
     dark: '#393939'
@@ -69,8 +69,8 @@ font:
     initial: 'Arial, sans-serif'
     target: &font-family-target 'Open Sans'
   weight:
-    standard: 400
-    bold: 600
+    standard: 500
+    bold: 700
   size:
     xxs: &font-size-xs .8em
     xs: &font-size-xs .95em
