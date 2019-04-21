@@ -163,21 +163,29 @@ class Menu extends React.Component {
               
             ))}
             <div className="d-flex flex-column mypad">
-              <FacebookProvider appId="240220023355857">
-                <Page href="https://www.facebook.com/pg/proofreadingbyPhD" width="350" height="150"/>
-              </FacebookProvider>
             <div className="p-2">
               <SocialIcon url="https://www.facebook.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3, marginLleft:4 }} bgColor="#ff5a01" />
               <SocialIcon url="https://www.twitter.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" />
               <SocialIcon url="https://www.whatsapp.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" network="whatsapp" />
-              <SocialIcon url="https://www.instagram.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" />
+              <SocialIcon url="https://www.instagram.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" network="whatsapp" />
             </div>
             </div>
             
           </ul>
           
           </div>
-          
+          {this.state.hiddenItems.length > 0 && <Expand onClick={this.toggleMenu} theme={theme} />}
+          {open &&
+            screenWidth >= 1024 && (
+              <div>
+              <ul className="hiddenItemList">
+                {this.state.hiddenItems.map(item => (
+                  <Item item={item} key={item.label} hiddenItem theme={theme} />
+                ))}
+              </ul>
+              
+            </div>
+            )}
         </nav>
 
         {/* --- STYLES --- */}
@@ -197,7 +205,6 @@ class Menu extends React.Component {
             transition: all ${theme.time.duration.default};
           }
           .mypad{
-            padding-top: 9rem;
 
           }
 
@@ -240,8 +247,7 @@ class Menu extends React.Component {
               background: transparent;
               display: flex;
               position: relative;
-              justify-content: flex-end;
-              padding-left: 50px;
+              justify-content: center;
               transition: none;
             }
 
@@ -250,8 +256,8 @@ class Menu extends React.Component {
               padding: 0;
             }
             .green{
-              background-color: #4CAF50;
-              color: tomato;
+              background-color: #0e7c13;
+              
             }
 
             .hiddenItemList {

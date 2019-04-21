@@ -119,8 +119,8 @@ class Header extends React.Component {
             transition: all 0.5s;
 
             .homepage & {
-              height: 80px;
-              width: 80px;
+              height: 70px;
+              width: 70px;
             }
 
             img {

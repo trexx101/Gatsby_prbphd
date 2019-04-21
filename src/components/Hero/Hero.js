@@ -131,7 +131,7 @@ const Hero = props => {
           }}
         />
         <div className="href row ">
-        <div className="col-md-6 col-sm-12 my-sm-7">
+        <div className="col-md-8 col-sm-12 my-sm-7">
         <br/>
         <br/>
           <div className="justify-content-start">
