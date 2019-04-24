@@ -2,6 +2,9 @@ import Link from "gatsby-link";
 import PropTypes from "prop-types";
 import React from "react";
 import VisibilitySensor from "react-visibility-sensor";
+import { SocialIcon } from 'react-social-icons';
+
+import {FacebookProvider, Page  }  from 'react-facebook';
 
 import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
 import config from "../../../content/meta/config";
@@ -36,6 +39,9 @@ class Header extends React.Component {
     return (
       <React.Fragment>
         <header className={`header ${this.getHeaderSize()}`}>
+        
+        
+          <div className={`bottomarea ${this.getHeaderSize()}`}>
           <Link to="/" className="logoType">
             <div className="logo">
               <img src={avatar} alt={config.siteTitle} />
@@ -61,6 +67,20 @@ class Header extends React.Component {
               </ScreenWidthContext.Consumer>
             )}
           </FontLoadedContext.Consumer>
+          
+          </div>
+
+          <div className={`toparea ${this.getHeaderSize()}`}>
+        <Link to="/" className="biglogoType">
+            <div className="biglogo">
+              <img src={avatar} alt={config.siteTitle} />
+            </div>
+            <div className="type">
+              <h1>{config.headerTitle}</h1>
+              <h2>{config.headerSubTitle}</h2>
+            </div>
+          </Link>
+        </div>
         </header>
         <VisibilitySensor onChange={this.visibilitySensorChange}>
           <div className="sensor" />
@@ -69,17 +89,38 @@ class Header extends React.Component {
         {/* --- STYLES --- */}
         <style jsx>{`
           .header {
-            align-items: center;
-            justify-content: center;
             background-color: ${theme.color.neutral.white};
             display: flex;
-            height: ${theme.header.height.default};
-            position: relative;
-            top: 0;
+            position: absolute;
+            flex-direction: column-reverse !important;
             width: 100%;
-            align-items: center;
+            max-height: initial;
+            overflow-y: initial;
+
+            .toparea{
+              height: ${theme.header.height.default};
+              border: 1px solid rgba(255,255,255,0.302);
+              border-left: 0 !important;
+              border-right: 0 !important;
+              align-content: center;
+              top: 0;
+              width: 100%;
+              margin-top: 0 !important;
+              padding-top: 0;
+              padding-right: 85px;
+              padding-left: 85px;
+            }
+
+            .bottomarea{
+              height: ${theme.header.height.default};
+              align-items: center;
+            justify-content: center;
+            width: 100%;
+            display: flex;
+            }
 
             :global(a.logoType) {
+              margin-top: 3px;
               align-items: center;
               display: flex;
               flex-direction: "column";
@@ -89,11 +130,20 @@ class Header extends React.Component {
                 flex-shrink: 0;
               }
             }
+            :global(a.biglogoType) {
+              align-items: center;
+              display: flex;
+              margin-top: 3px;
+              color: ${theme.text.color.primary};
+
+              .biglogo {
+              }
+            }
 
             &.homepage {
               position: absolute;
               background-color: transparent;
-              height: ${theme.header.height.homepage};
+              height: 140px;
             }
           }
 
@@ -141,10 +191,14 @@ class Header extends React.Component {
 
           @from-width tablet {
             .header {
-              padding: ${theme.space.inset.l};
+              z-index: 10;
+
+              :global(a.logoType){
+                display:none;
+              }
 
               &.homepage {
-                height: ${theme.header.height.homepage};
+                height: 140px;
               }
             }
           }
@@ -157,6 +211,7 @@ class Header extends React.Component {
 
               :global(a.logoType),
               h1 {
+                display:none;
                 color: ${theme.color.neutral.white};
               }
               h2 {
@@ -167,14 +222,31 @@ class Header extends React.Component {
 
           @from-width desktop {
             .header {
-              align-items: center;
               background-color: ${theme.color.neutral.white};
               display: flex;
-              position: absolute;
-              top: 0;
-              width: 100%;
-              justify-content: space-between;
+              position: relative;
               transition: padding 0.5s;
+              max-height: initial;
+              overflow-y: initial;
+
+              .toparea{
+                display: flex;
+                border-left: 0 !important;
+                border-right: 0 !important;
+                align-items: center;
+                flex-direction: row;
+                justify-content: center;
+                top: 0;
+                width: 100%;
+                padding-top: 1em;
+              }
+  
+              .bottomarea{
+                height: ${theme.header.height.default};
+                align-items: center;
+              justify-content: space-between;
+              width: 100%;
+              }
 
               &.fixed {
                 height: ${theme.header.height.fixed};
@@ -196,8 +268,10 @@ class Header extends React.Component {
               }
 
               &.homepage:not(.fixed) {
-                :global(a.logoType),
-                h1 {
+                :global(a.logoType){
+                  display:none;
+                }
+                :global(a.logoType), h1 {
                   color: ${theme.color.neutral.white};
                 }
                 h2 {

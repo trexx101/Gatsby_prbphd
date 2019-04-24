@@ -31,12 +31,13 @@ class Menu extends React.Component {
       { to: "/", label: "Home", icon: FaHome },
       { to: "/about/", label: "About", icon: FaIndustry },
       { to: "/papers/", label: "Papers", icon: FaClip },
-      //{ to: "/category/", label: "Categories", icon: FaTag },
+      //{ to: "/category/", label: "Categories", icon: FaClip },
       // { to: "/search/", label: "Search", icon: FaSearch },
       ...pages,
+      {to: "/contact/", label: "Get Quote", icon: FaEnvelope}
      // { to: "/contact/", label: "Get Quote", icon: FaEnvelope }
     ];
-  this.quotepage = [{to: "/contact/", label: "Get Quote", icon: FaEnvelope}];
+  //this.quotepage = [{to: "/contact/", label: "Get Quote", icon: FaEnvelope}];
 
     this.renderedItems = []; // will contain references to rendered DOM elements of menu
   }
@@ -69,7 +70,7 @@ class Menu extends React.Component {
       if (this.props.path !== prevProps.path) {
         this.closeMenu();
       }
-      this.hideOverflowedMenuItems();
+      //this.hideOverflowedMenuItems();
     }
   }
 
@@ -155,21 +156,17 @@ class Menu extends React.Component {
         <nav className={`menu ${open ? "open" : ""}`} rel="js-menu">
         <div>
           <ul className="itemList" ref={this.itemList}>
-            {this.items.map(item => (
-              <Item item={item} key={item.label} icon={item.icon} theme={theme} />
-            ))}
-            {this.quotepage.map(itm => (
-              <Item green item={itm} key={itm.label} icon={itm.icon} theme={theme} />
+            {this.items.map(item => {
+              if (item.label.includes("Quote")){
+                return <Item green item={item} key={item.label} icon={item.icon} theme={theme} />
               
-            ))}
-            <div className="d-flex flex-column mypad">
-            <div className="p-2">
-              <SocialIcon url="https://www.facebook.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3, marginLleft:4 }} bgColor="#ff5a01" />
-              <SocialIcon url="https://www.twitter.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" />
-              <SocialIcon url="https://www.whatsapp.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" network="whatsapp" />
-              <SocialIcon url="https://www.instagram.com/proofreadingbyPhD/"  style={{ height: 25, width: 25, margin: 3 }} bgColor="#ff5a01" network="whatsapp" />
-            </div>
-            </div>
+              }
+              else {
+                return <Item item={item} key={item.label} icon={item.icon} theme={theme} />
+              }
+              
+            })}
+            
             
           </ul>
           
@@ -205,7 +202,8 @@ class Menu extends React.Component {
             transition: all ${theme.time.duration.default};
           }
           .mypad{
-
+            align-self: flex-end;
+            padding-left : 10em;
           }
 
           .itemList {

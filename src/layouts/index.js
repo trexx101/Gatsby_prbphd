@@ -6,6 +6,8 @@ import React from "react";
 import { getScreenWidth, timeoutThrottlerHandler } from "../utils/helpers";
 import Footer from "../components/Footer/";
 import Header from "../components/Header";
+import { SocialIcon } from 'react-social-icons';
+import {FacebookProvider, Page  }  from 'react-facebook';
 
 export const ThemeContext = React.createContext(null);
 export const ScreenWidthContext = React.createContext(0);
@@ -88,8 +90,40 @@ class Layout extends React.Component {
           <ScreenWidthContext.Provider value={this.state.screenWidth}>
             <React.Fragment>
               <Header path={this.props.location.pathname} pages={pages} theme={this.state.theme} />
+
               <main>{children()}</main>
               <Footer html={footnoteHTML} theme={this.state.theme} />
+              <div className="sticky-container">
+              <ul className="sticky">
+                <li>
+                <div className="icon-so">
+                <SocialIcon url="https://www.twitter.com/proofreadingbyPhD/"  style={{ height: 32, width: 32 }} bgColor="#ff5a01" />
+                </div>
+                    <p><a href="https://www.twitter.com/proofreadingbyPhD/" target="_blank"><b>Follow Us on Twitter</b></a></p>
+                </li>
+                <li>
+                <div className="icon-so">
+                <SocialIcon url="https://www.instagram.com/proofreadingbyPhD/"  style={{ height: 32, width: 32 }} bgColor="#ff5a01" network="instagram" />
+                </div>
+                    <p><a href="https://www.instagram.com/proofreadingbyPhD/" target="_blank"><b>Follow Us on Twitter</b></a></p>
+                </li>
+                <li>
+                <div className="icon-so">
+                <SocialIcon url="https://www.whatsapp.com/proofreadingbyPhD/"  style={{ height: 32, width: 32 }} bgColor="#ff5a01" network="whatsapp" />
+                </div>
+                    <p><a href="https://www.whatsapp.com/proofreadingbyPhD" target="_blank"><b>Call +011 - 254 2556</b></a></p>
+                </li>
+                <li className="heavyFB">
+                  <div className="icon-so">
+                  <SocialIcon url="https://www.facebook.com/proofreadingbyPhD/"  style={{ height: 32, width: 32 }} bgColor="#ff5a01" />
+                  </div>
+                  <FacebookProvider appId="240220023355857">
+                    <Page href="https://www.facebook.com/pg/proofreadingbyPhD" width="350" height="150"/>
+                  </FacebookProvider>
+                </li>
+              </ul>
+                  
+              </div>
 
               {/* --- STYLES --- */}
               <style jsx>{`
@@ -138,6 +172,56 @@ class Layout extends React.Component {
                   width: auto;
                   display: block;
                 }
+
+                .sticky-container{
+                  padding:0px;
+                  margin:0px;
+                  position:fixed;
+                  right:-150px;
+                  top:230px;
+                  width:210px;
+                  z-index: 1100;
+              }
+              .sticky li{
+                display: flex;
+                  list-style-type:none;
+                  background-color:#fff;
+                  color:#efefef;
+                  height:43px;
+                  padding:0px;
+                  margin:0px 0px 1px 0px;
+                  -webkit-transition:all 0.25s ease-in-out;
+                  -moz-transition:all 0.25s ease-in-out;
+                  -o-transition:all 0.25s ease-in-out;
+                  transition:all 0.25s ease-in-out;
+                  cursor:pointer;
+              }
+              .sticky .heavyFB:hover{
+                margin-left:-265px;
+            }
+              .sticky li:hover{
+                  margin-left:-110px;
+              }
+              
+              .icon-so{
+                  float:left;
+                  margin:5px 4px;
+                  margin-right:5px;
+              }
+              .sticky li p{
+                  padding-top:5px;
+                  margin:0px;
+                  line-height:16px;
+                  font-size:11px;
+              }
+              .sticky li p a{
+                  text-decoration:none;
+                  color:#2C3539;
+              }
+              .sticky li p a:hover{
+                  text-decoration:underline;
+              }
+
               `}</style>
             </React.Fragment>
           </ScreenWidthContext.Provider>

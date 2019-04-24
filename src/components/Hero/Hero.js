@@ -5,6 +5,7 @@ import { Col, Table, Button } from 'reactstrap';
 
 import FaArrowDown from "react-icons/lib/fa/arrow-down";
 import {FacebookProvider, Page  }  from 'react-facebook';
+import HeroBanner from "../../images/jpg/Banner.jpg";
 const fbGroup = '<div class="fb-group" data-href="https://www.facebook.com/proofreadingbyPhD/" data-width="280" data-show-social-context="true" data-show-metadata="false"></div>';
 
 const Hero = props => {
@@ -273,7 +274,7 @@ const Hero = props => {
 
         @from-width desktop {
           .hero {
-            background-image: url(${backgrounds.desktop});
+            background-image: url(${HeroBanner});
           }
 
           h1 {
