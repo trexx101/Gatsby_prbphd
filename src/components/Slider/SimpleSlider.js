@@ -42,7 +42,7 @@ class SimpleSlider extends React.Component {
     var settings = {
       dots: true,  infinite: true,
       speed: 500,  slidesToShow: 2,
-      slidesToScroll: 3
+      slidesToScroll: 2
     };
     const quote = (() => {
         return <i className="fas fa-quote-left" ></i>
@@ -51,8 +51,8 @@ class SimpleSlider extends React.Component {
 
     const slides = items.map((item) => {
         return (
-        <div className="px-3">
-          <Card body className="text-center padding">
+        <div className="px-3 row">
+          <Card body className="text-center col-sm-12 col-lg-12 col-md-12 padding">
             <Avatar size={size} src={item.link} className="mx-auto" rounded/>
             <Link to="/" ><CardTitle>{item.name}</CardTitle></Link>
             <CardText>{item.role}</CardText>

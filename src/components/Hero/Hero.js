@@ -26,14 +26,14 @@ const Hero = props => {
 
   return (
     <React.Fragment>
-      <HeroContainer style={{ backgroundImage: `url("${HeroBanner}")` }}>
+      <HeroContainer style={{ backgroundImage: `url("${banner2}")` }}>
       <div className="href">
       <div className="row">
         <div className="col-lg-6 col-md-7 col-sm-12">
         <br/>
           <div className="justify-content-start">
-            <h2 className="mb-4">Research Paper Publication. Simplified...</h2>
-            <p>
+            <h2 className="text-dark mb-4">Research Paper Publication. Simplified...</h2>
+            <p className="text-dark">
             Subject expertise, personalized support, and 100% quality guarantee.
               
             </p>
@@ -56,13 +56,13 @@ const Hero = props => {
             <Table hover>
               <tbody>
                 <tr>
-                  <td>300+ Papers Edited</td>
+                  <td ><p className="text-dark">300+ Papers Edited</p></td>
                 </tr>
                 <tr>
-                  <td>30+ Consulted</td>
+                  <td ><p className="text-dark">30+ Consulted</p></td>
                 </tr>
                 <tr>
-                  <td>20+ Experts</td>
+                  <td ><p className="text-dark">20+ Experts</p></td>
                 </tr>
               </tbody>
             </Table>

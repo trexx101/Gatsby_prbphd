@@ -158,9 +158,6 @@ class PapersPage extends React.Component {
                 backgrounds={backgrounds}
                 theme={theme}
               />
-        <div className="gap" />
-        <hr className="my-4" />
-        <div className="gap" />
 
         <div>
           <Jumbotron className="d-flex flex-column text-center">
@@ -168,12 +165,12 @@ class PapersPage extends React.Component {
             <br />
             <br />
 
-            <p className="lead text-center">
+            <p className="lead text-center font-weight-bold text-dark font-h2">
               {" "}
               Utilization of natural cellulose fiber in wastewater treatment
             </p>
-            <hr className="my-2 text-center" />
-            <p>By Nur Syazwani Abd Rahman, Mohd Firdaus Yahya, Baharin Azahari</p>
+            <hr className="my-2 text-center font-weight-bold text-dark" />
+            <p className="font-weight-bold text-dark">By Nur Syazwani Abd Rahman, Mohd Firdaus Yahya, Baharin Azahari</p>
             <p className="lead">
               <ButtonGroup size="lg">
                 <Button color="primary">Crossmark Publishing</Button>
@@ -183,10 +180,7 @@ class PapersPage extends React.Component {
           </Jumbotron>
         </div>
 
-        <div className="gap" />
-        <div className="gap" />
-
-        <div className="container container-fluid padding my-4">
+        <div className="container container-fluid padding">
           <div id="large-th">
             <div className="containment">
               <h1> Complete Clients’ Publications</h1>
@@ -213,12 +207,19 @@ class PapersPage extends React.Component {
             margin: 0;
             border: 0;
           }
+          .padding {
+            padding: 80px 0;
+          }
           .gap {
             margin-bottom: 50px;
           }
           .container {
             margin: 0 auto;
             max-width: 910px;
+          }
+
+          .font-h2 {
+            font-size: 26px;
           }
 
           .choose {
