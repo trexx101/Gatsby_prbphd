@@ -206,6 +206,30 @@ class Header extends React.Component {
           @from-width tablet {
             .header {
               z-index: 10;
+              
+              &.homepage:not(.fixed) {
+                :global(a.logoType){
+                  display:none;
+                }
+                :global(a.logoType), h1 {
+                  color: ${theme.color.neutral.white};
+                }
+                h2 {
+                  color: ${theme.color.neutral.gray.d};
+                }
+              }
+
+              &.about:not(.fixed) {
+                :global(a.logoType){
+                  display:none;
+                }
+                :global(a.logoType), h1 {
+                  color: ${theme.color.neutral.white};
+                }
+                h2 {
+                  color: ${theme.color.neutral.gray.d};
+                }
+              }
 
               &.homepage {
                 height: 140px;

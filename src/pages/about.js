@@ -71,7 +71,14 @@ class AboutPage extends React.Component {
               />
 
               <div className="container container-fluid padding">
-                <h1 className="pb-4">About Us and Services</h1>
+              <Row className="pb-3">
+                    <Col md="4">
+                      <hr className="line-info" />
+                      <h1>
+                        About Us and Services <span className="text-info">get to know us</span>
+                      </h1>
+                    </Col>
+                  </Row>
                 <Row>
                   <Col md={{ size: 9 }}>
                     <div className="mb-4">
@@ -170,8 +177,14 @@ class AboutPage extends React.Component {
               </div>
 
               <div className="container container-fluid padding">
-                <h3>Consultancy services</h3>
-                <div className="gap" />
+              <Row className="pb-3">
+                    <Col md="4">
+                      <hr className="line-info" />
+                      <h1>
+                        Consultancy Services
+                      </h1>
+                    </Col>
+                  </Row>
                 <Row>
                   <p>
                     Chief Editor also works closely with subject matter experts (SMEs) from various
@@ -197,8 +210,8 @@ class AboutPage extends React.Component {
                     <li class="list-group-item">EViews</li>
                   </ul>
                 </Row>
-                <div className="gap" />
-                <Row>
+
+                <Row >
                   <Col md="6">
                     <Card className="py-1 px-1">
                       <h3>Ordering Process</h3>
@@ -230,8 +243,14 @@ class AboutPage extends React.Component {
               </div>
 
               <div className="container container-fluid padding">
-                <h3>Our chief Editor</h3>
-                <div className="gap" />
+              <Row className="pb-3">
+                    <Col md="4">
+                      <hr className="line-info" />
+                      <h1>
+                        Our Chief Editor <span className="text-info">meet the team</span>
+                      </h1>
+                    </Col>
+                  </Row>
                 <Row>
                   <Col md={{ size: 9 }}>
                     <div className="mb-4">
@@ -274,9 +293,17 @@ class AboutPage extends React.Component {
               <Team />
 
               <Container>
+              <Row className="pb-3">
+                    <Col md="4">
+                      <hr className="line-info" />
+                      <h1>
+                        Our services
+                      </h1>
+                    </Col>
+                  </Row>
                 <Row className="justify-content-center">
                   <Col lg="12">
-                    <h1 className="text-center">Our Services</h1>
+                    
                     <Row className="row-grid justify-content-center">
                       <Col lg="3">
                         <div className="info">
@@ -337,7 +364,7 @@ class AboutPage extends React.Component {
               <section className="section section-lg section-coins">
                 <img alt="..." className="path" src={require("../assets/img/path3.png")} />
                 <Container>
-                  <Row>
+                  <Row className="pb-3">
                     <Col md="4">
                       <hr className="line-info" />
                       <h1>
