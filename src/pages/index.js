@@ -34,6 +34,7 @@ class IndexPage extends React.Component {
   };
 
   render() {
+
     const {
       data: {
         posts: { edges: posts = [] },
@@ -58,6 +59,7 @@ class IndexPage extends React.Component {
       mobile
     };
 
+    const joinGroup = "<div class=\"fb-group\" data-href=\"https://www.facebook.com/groups/effectivepublishing/\" data-width=\"280\" data-show-social-context=\"false\" data-show-metadata=\"false\"></div>"
     return (
       <React.Fragment>
         <ThemeContext.Consumer>
@@ -105,10 +107,14 @@ class IndexPage extends React.Component {
             </div>
             <div className="row">
               <div className="col">
-                <div className="d-flex justify-content-center mt-4">
+                <div className="d-flex  justify-content-center mt-4">
                   <Button href="https://bit.ly/ProofReviews">Read more testimonials</Button>
-                </div>
-                <div className="gap" />
+                  
+                  </div>
+                  <div className="d-flex  justify-content-center mt-4">
+                  <div dangerouslySetInnerHTML={{ __html: joinGroup }}  />
+                  
+                  </div>
                 <div className="gap" />
               </div>
             </div>
