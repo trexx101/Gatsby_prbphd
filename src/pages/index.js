@@ -67,7 +67,7 @@ class IndexPage extends React.Component {
         </ThemeContext.Consumer>
 
         <div className="jumbotron awards mb-0">
-          <div className="row text-center padding">
+          <div className="row text-center">
             <div className="col-xs-12 col-sm-6 col-md-4">
               <span className="goldmetal">
                 <i className="fas fa-award fa-4x" />
@@ -90,10 +90,10 @@ class IndexPage extends React.Component {
           </div>
         </div>
         <div className="backgrounder">
-          <div className="container container-fluid padding mb-4 ">
+          <div className="container container-fluid padding ">
             <div className="row">
               <div className="col">
-                <h1 className="padding my-4 pb-4">Testimonials</h1>
+                <h1 className="mb-4 ">Testimonials</h1>
                 <SimpleSlider />
               </div>
               </div>
@@ -112,8 +112,8 @@ class IndexPage extends React.Component {
         <br/>
         <br/>
 
-        <div className="container container-fluid padding my-4">
-          <h1 className="padding my-4">Get Quotation</h1>
+        <div className="container container-fluid padding">
+          <h1 className="mb-4">Get Quotation</h1>
           <Row>
             <Col md={{ size: 6 }}>
               <div className="mb-4">
@@ -154,20 +154,15 @@ class IndexPage extends React.Component {
           </Row>
         </div>
         
-        <br/>
-        <hr className="my-4" />
-        <br/>
+       
 
-        <div className="container container-fluid padding my-4">
+        <div className="container container-fluid padding">
           <h1 className=" mb-4">Our Work</h1>
           <WorkTable />
         </div>
-        <br/>
-        <br/>
-        <hr className="my-4" />
-        <div className="gap" />
+        
 
-        <div className="container container-fluid padding my-4">
+        <div className="container container-fluid padding">
           <h1 className=" mb-4">Upcoming Events</h1>
           <Slido />
           <div className="d-flex justify-content-center mt-4">
@@ -178,11 +173,7 @@ class IndexPage extends React.Component {
           </div>
         </div>
 
-        <div className="gap" />
-        <hr className="my-4" />
-        <div className="gap" />
-
-        <div className="container container-fluid padding my-4">
+        <div className="container container-fluid padding">
           <h1 className=" mb-4">Our Official and Trusted Institutions and Publishers</h1>
           <Collab />
         </div>
@@ -212,6 +203,9 @@ class IndexPage extends React.Component {
             background-repeat: no-repeat;
             background-position: right top;
             background-size: inherit;
+          }
+          .padding{
+            padding: 80px 0;
           }
         `}</style>
       </React.Fragment>

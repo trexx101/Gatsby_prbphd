@@ -33,7 +33,7 @@ class Menu extends React.Component {
       { to: "/papers/", label: "Papers", icon: FaClip },
       //{ to: "/category/", label: "Categories", icon: FaClip },
       // { to: "/search/", label: "Search", icon: FaSearch },
-      ...pages,
+      //...pages,
       {to: "/contact/", label: "Get Quote", icon: FaEnvelope}
      // { to: "/contact/", label: "Get Quote", icon: FaEnvelope }
     ];

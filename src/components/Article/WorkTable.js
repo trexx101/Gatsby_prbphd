@@ -2,6 +2,7 @@ import React from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import CardOverlay from './CardOverLay';
+import ModalImage from 'react-modal-image';
 
 import content1 from "../../images/content/chapter_1.jpg";
 import content2 from "../../images/content/litReview.jpg";
@@ -43,21 +44,21 @@ export default class WorkTable extends React.Component {
         <div className="col-xs-12 col-sm-12 col-md-6">
           <div className="padding">
             <h4>ACADEMIC TUTORIALS</h4>
-            <div className="row">
+            <div className="row mb-4 pb-3">
               <div className="col-xs-4 col-sm-6 col-md-4 padding">
-                <CardOverlay data={content1}></CardOverlay>
-                <CardOverlay data={content2}></CardOverlay>
-                <CardOverlay data={content3}></CardOverlay>
+              <ModalImage className="pb-4" large={content1} small={content1}/>
+              <ModalImage className="pb-4" large={content2} small={content2}/>
+              <ModalImage className="pb-4" large={content3} small={content3}/>
               </div>
               <div className="col-xs-4 col-sm-6 col-md-4">
-                <CardOverlay data={content4}></CardOverlay>
-                <CardOverlay data={content5}></CardOverlay>
-                <CardOverlay data={content6}></CardOverlay>
+              <ModalImage className="pb-4" large={content4} small={content4}/>
+              <ModalImage className="pb-4" large={content5} small={content5}/>
+              <ModalImage className="pb-4" large={content6} small={content6}/>
               </div>
               <div className="col-xs-4 col-sm-6 col-md-4">
-                <CardOverlay data={content2}></CardOverlay>
-                <CardOverlay data={content2}></CardOverlay>
-                <CardOverlay data={content2}></CardOverlay>
+              <ModalImage className="pb-4" large={content2} small={content2}/>
+              <ModalImage className="pb-4" large={content2} small={content2}/>
+              <ModalImage className="pb-4" large={content2} small={content2}/>
               </div>
               
             </div>
@@ -68,26 +69,37 @@ export default class WorkTable extends React.Component {
             <h4>CLIENTS’ ACCEPTED PAPERS</h4>
             <div className="row">
               <div className="col-xs-4 col-sm-6 col-md-4 padding">
-                <CardOverlay data={paper1}></CardOverlay>
-                <CardOverlay data={paper2}></CardOverlay>
-                <CardOverlay data={paper3}></CardOverlay>
+              <ModalImage className="pb-4" large={paper0} small={paper0}/>
+              <ModalImage className="pb-4" large={paper1} small={paper1}/>
+              <ModalImage className="pb-4" large={paper2} small={paper2}/>
               </div>
               <div className="col-xs-4 col-sm-6 col-md-4">
-                <CardOverlay data={paper2}></CardOverlay>
-                <CardOverlay data={paper5}></CardOverlay>
-                <CardOverlay data={paper6}></CardOverlay>
+              <ModalImage className="pb-4" large={paper3} small={paper3}/>
+              <ModalImage className="pb-4" large={paper5} small={paper5}/>
+              <ModalImage className="pb-4" large={paper6} small={paper6}/>
               </div>
               <div className="col-xs-4 col-sm-6 col-md-4">
-                <CardOverlay data={paper0}></CardOverlay>
-                <CardOverlay data={paper2}></CardOverlay>
-                <CardOverlay data={paper2}></CardOverlay>
+              <ModalImage className="pb-4" large={paper6} small={paper6}/>
+              <ModalImage className="pb-4" large={paper6} small={paper6}/>
+              <ModalImage className="pb-4" large={paper6} small={paper6}/>
               </div>
               
             </div>
 
           </div>
         </div>
+        <style jsx>{`
+      CardOverlay{
+        padding-bottom: 5px;
+      }
+      .padding{
+        padding-bottom:20px;
+      }
+      `}
+      
+      </style>
       </div>
+      
     );
   }
 }

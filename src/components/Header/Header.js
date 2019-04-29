@@ -4,6 +4,7 @@ import React from "react";
 import VisibilitySensor from "react-visibility-sensor";
 import { SocialIcon } from 'react-social-icons';
 
+
 import {FacebookProvider, Page  }  from 'react-facebook';
 
 import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
@@ -13,6 +14,7 @@ import Menu from "../Menu";
 import avatar from "../../images/png/prbphd_small_logo.png";
 
 class Header extends React.Component {
+ 
   state = {
     fixed: false
   };
@@ -28,8 +30,10 @@ class Header extends React.Component {
   getHeaderSize = () => {
     const fixed = this.state.fixed ? "fixed" : "";
     const homepage = this.props.path === "/" ? "homepage" : "";
+    const aboutpage = this.props.path === "/about/" ? "about" : "";
+    const paperpage = this.props.path === "/papers/" ? "about" : "";
 
-    return `${fixed} ${homepage}`;
+    return `${fixed} ${homepage} ${aboutpage} ${paperpage}`;
   };
 
   render() {
@@ -145,6 +149,11 @@ class Header extends React.Component {
               background-color: transparent;
               height: 140px;
             }
+            &.about {
+              position: absolute;
+              background-color: transparent;
+              height: 140px;
+            }
           }
 
           h1 {
@@ -173,6 +182,11 @@ class Header extends React.Component {
               width: 70px;
             }
 
+            .about & {
+              height: 70px;
+              width: 70px;
+            }
+
             img {
               width: 100%;
             }
@@ -193,10 +207,6 @@ class Header extends React.Component {
             .header {
               z-index: 10;
 
-              :global(a.logoType){
-                display:none;
-              }
-
               &.homepage {
                 height: 140px;
               }
@@ -211,7 +221,20 @@ class Header extends React.Component {
 
               :global(a.logoType),
               h1 {
-                display:none;
+                color: ${theme.color.neutral.white};
+              }
+              h2 {
+                color: ${theme.color.neutral.gray.d};
+              }
+            }
+
+            .header.about {
+              .logo {
+                border: none;
+              }
+
+              :global(a.logoType),
+              h1 {
                 color: ${theme.color.neutral.white};
               }
               h2 {
@@ -268,6 +291,18 @@ class Header extends React.Component {
               }
 
               &.homepage:not(.fixed) {
+                :global(a.logoType){
+                  display:none;
+                }
+                :global(a.logoType), h1 {
+                  color: ${theme.color.neutral.white};
+                }
+                h2 {
+                  color: ${theme.color.neutral.gray.d};
+                }
+              }
+
+              &.about:not(.fixed) {
                 :global(a.logoType){
                   display:none;
                 }

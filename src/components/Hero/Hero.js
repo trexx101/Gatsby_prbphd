@@ -2,138 +2,34 @@ import React from "react";
 import PropTypes from "prop-types";
 import Particles from "react-particles-js";
 import { Col, Table, Button } from 'reactstrap';
+import styled from 'styled-components'
 
 import FaArrowDown from "react-icons/lib/fa/arrow-down";
 import {FacebookProvider, Page  }  from 'react-facebook';
 import HeroBanner from "../../images/jpg/Banner.jpg";
+import banner2 from "../../images/jpg/book-pages.jpg";
+import areas from "../../images/testimonials/ahmed.jpg";
 const fbGroup = '<div class="fb-group" data-href="https://www.facebook.com/proofreadingbyPhD/" data-width="280" data-show-social-context="true" data-show-metadata="false"></div>';
-
+const HeroContainer = styled.div`
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+`
 const Hero = props => {
   const { scrollToContent, backgrounds, theme } = props;
 
   return (
     <React.Fragment>
-      <section className="holder">
-        <Particles
-          params={{
-            particles: {
-              number: {
-                value: 120,
-                density: {
-                  enable: true,
-                  value_area: 868.0624057955
-                }
-              },
-              color: {
-                value: "#ecd018"
-              },
-              shape: {
-                type: "circle",
-                stroke: {
-                  width: 0,
-                  color: "#000000"
-                },
-                polygon: {
-                  nb_sides: 5
-                },
-                image: {
-                  src: "img/github.svg",
-                  width: 100,
-                  height: 100
-                }
-              },
-              opacity: {
-                value: 0.5,
-                random: true,
-                anim: {
-                  enable: false,
-                  speed: 1,
-                  opacity_min: 0.1,
-                  sync: false
-                }
-              },
-              size: {
-                value: 3,
-                random: true,
-                anim: {
-                  enable: false,
-                  speed: 40,
-                  size_min: 0.1,
-                  sync: false
-                }
-              },
-              line_linked: {
-                enable: true,
-                distance: 150,
-                color: "#e2d018",
-                opacity: 0.4,
-                width: 1
-              },
-              move: {
-                enable: true,
-                speed: 5,
-                direction: "none",
-                random: false,
-                straight: false,
-                out_mode: "out",
-                bounce: false,
-                attract: {
-                  enable: false,
-                  rotateX: 600,
-                  rotateY: 1200
-                }
-              }
-            },
-            interactivity: {
-              detect_on: "canvas",
-              events: {
-                onhover: {
-                  enable: true,
-                  mode: "repulse"
-                },
-                onclick: {
-                  enable: true,
-                  mode: "push"
-                },
-                resize: false
-              },
-              modes: {
-                grab: {
-                  distance: 400,
-                  line_linked: {
-                    opacity: 1
-                  }
-                },
-                bubble: {
-                  distance: 400,
-                  size: 40,
-                  duration: 2,
-                  opacity: 8,
-                  speed: 3
-                },
-                repulse: {
-                  distance: 60,
-                  duration: 0.4
-                },
-                push: {
-                  particles_nb: 4
-                },
-                remove: {
-                  particles_nb: 2
-                }
-              }   
-            },
-            retina_detect: true
-          }}
-          style={{
-            background: `${theme.hero.background}`,
-            minHeight: "100vh",
-            width: "100%"
-          }}
-        />
-        <div className="href row ">
-        <div className="col-md-8 col-sm-12 my-sm-7">
-        <br/>
+      <HeroContainer style={{ backgroundImage: `url("${HeroBanner}")` }}>
+      <div className="href">
+      <div className="row">
+        <div className="col-lg-6 col-md-7 col-sm-12">
         <br/>
           <div className="justify-content-start">
             <h2 className="mb-4">Research Paper Publication. Simplified...</h2>
@@ -153,9 +49,9 @@ const Hero = props => {
               </Button>
           </div>
         </div>
-        <div className="col-md-offset-3 col-md-4">
+        <div className="col-lg-4 col-md-4 col-sm-12">
         <br/>
-        <br/>
+        
           <div className="justify-content-end">
             <Table hover>
               <tbody>
@@ -174,36 +70,28 @@ const Hero = props => {
         </div>
         
         </div>
-        
-      </section>
+      </div>
+      
+      </HeroContainer>
 
       {/* --- STYLES --- */}
       <style jsx>{`
-        .holder {
-          display: flex;
-          flex-flow: column nowrap;
-          justify-content: center;
-        }
-        .hero {
-          display: flex;
-          flex-flow: column nowrap;
-          justify-content: center;
-          align-items: center;
-          min-height: 100vh;
-          padding: ${theme.space.inset.l};
-        }
+       
 
         .href {
-          position: Absolute;
-          left: 80px;
+          display: table-cell;
+          vertical-align: middle;
+          
           text-align: center;
           font-size: ${theme.hero.h1.size};
           
-          color: ${theme.hero.h1.color};
+          color: ${theme.color.brand.dark};
           line-height: ${theme.hero.h1.lineHeight};
           text-remove-gap: both 0 "Open Sans";
           width: 94%;
-          height: 366px;
+          height: 400px;
+
+          
 
           :global(strong) {
             position: relative;

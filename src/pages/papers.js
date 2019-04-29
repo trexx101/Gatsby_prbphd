@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import { ThemeContext } from "../layouts";
+
+import MiniHero from "../components/Hero/MiniHero";
 import Seo from "../components/Seo";
 import { Button, Container } from "reactstrap";
 //import { Col } from "antd";
@@ -40,8 +42,32 @@ const book_list = [
 class PapersPage extends React.Component {
   separator = React.createRef();
 
+  scrollToContent = e => {
+    this.separator.current.scrollIntoView({ block: "start", behavior: "smooth" });
+  };
+
 
   render() {
+    const {
+      data: {
+        bgDesktop: {
+          resize: { src: desktop }
+        },
+        bgTablet: {
+          resize: { src: tablet }
+        },
+        bgMobile: {
+          resize: { src: mobile }
+        }
+      }
+    } = this.props;
+
+    const backgrounds = {
+      desktop,
+      tablet,
+      mobile
+    };
+
    const books = book_list.map((book) => {
      return (
        <span>
@@ -124,6 +150,14 @@ class PapersPage extends React.Component {
 
     return (
       <React.Fragment>
+        <ThemeContext.Consumer>
+          {theme => (
+            <div>
+              <MiniHero
+                scrollToContent={this.scrollToContent}
+                backgrounds={backgrounds}
+                theme={theme}
+              />
         <div className="gap" />
         <hr className="my-4" />
         <div className="gap" />
@@ -305,6 +339,9 @@ class PapersPage extends React.Component {
           zoom on click
           ***********************************/
         `}</style>
+        </div>
+          )}
+        </ThemeContext.Consumer>
       </React.Fragment>
     );
   }
@@ -313,3 +350,57 @@ class PapersPage extends React.Component {
 export default PapersPage;
 
 //eslint-disable-next-line no-undef
+export const guery = graphql`
+  query PaperQuery {
+    posts: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "//posts/[0-9]+.*--/" } }
+      sort: { fields: [fields___prefix], order: DESC }
+    ) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+            prefix
+          }
+          frontmatter {
+            title
+            category
+            author
+            cover {
+              children {
+                ... on ImageSharp {
+                  sizes(maxWidth: 800, maxHeight: 360) {
+                    ...GatsbyImageSharpSizes_withWebp
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    site {
+      siteMetadata {
+        facebook {
+          appId
+        }
+      }
+    }
+    bgDesktop: imageSharp(id: { regex: "/hero-background/" }) {
+      resize(width: 1200, quality: 90, cropFocus: CENTER) {
+        src
+      }
+    }
+    bgTablet: imageSharp(id: { regex: "/hero-background/" }) {
+      resize(width: 800, height: 1100, quality: 90, cropFocus: CENTER) {
+        src
+      }
+    }
+    bgMobile: imageSharp(id: { regex: "/hero-background/" }) {
+      resize(width: 450, height: 850, quality: 90, cropFocus: CENTER) {
+        src
+      }
+    }
+  }
+`;
