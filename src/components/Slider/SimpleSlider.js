@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import { Card, CardText, CardTitle, Row, Col } from 'reactstrap';
 import { Link } from "react-router-dom";
 import Avatar from "../Util/Avatar";
+import {isMobile} from 'react-device-detect';
 
 import areas from "../../images/testimonials/ahmed.jpg"; 
 import chai from "../../images/testimonials/hamimi.jpg";
@@ -40,9 +41,38 @@ class SimpleSlider extends React.Component {
 
   render() {
     var settings = {
-      dots: true,  infinite: true,
-      speed: 500,  slidesToShow: 2,
-      slidesToScroll: 2
+      dots: true,  
+      infinite: true,
+      speed: 500,  
+      slidesToShow: 2,
+      slidesToScroll: 2,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 4,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 4
+          }
+        }
+      ]
+
     };
     const quote = (() => {
         return <i className="fas fa-quote-left" ></i>
