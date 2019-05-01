@@ -39,6 +39,8 @@ export default class WorkTable extends React.Component {
     }
   }
   render() {
+    const joinGroup = "<div class=\"fb-group\" data-href=\"https://www.facebook.com/groups/effectivepublishing/\" data-width=\"280\" data-show-social-context=\"false\" data-show-metadata=\"false\"></div>"
+
     return (
       <div className="row padding">
         <div className="col-xs-12 col-sm-12 col-md-6">
@@ -85,7 +87,9 @@ export default class WorkTable extends React.Component {
               </div>
               
             </div>
-
+            <div className="d-flex justify-content-center">
+            <div dangerouslySetInnerHTML={{ __html: joinGroup }}  />
+            </div>
           </div>
         </div>
         <style jsx>{`

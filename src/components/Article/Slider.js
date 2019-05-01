@@ -6,23 +6,44 @@ import {
   CarouselIndicators,
   CarouselCaption
 } from 'reactstrap';
+import avatar1 from "../../images/workshop/WS1.jpg";
+import avatar2 from "../../images/workshop/WS2.jpg";
+import avatar3 from "../../images/workshop/WS3.jpg";
+import avatar4 from "../../images/workshop/WS4.jpg";
+import avatar5 from "../../images/workshop/WS5.jpg";
 
 const items = [
   {
+    src: avatar1,
     id: 1,
     altText: 'Slide 1',
     caption: 'Slide 1'
   },
   {
+    src: avatar2,
     id: 2,
     altText: 'Slide 2',
     caption: 'Slide 2'
   },
   {
+    src: avatar3,
+    id: 3,
+    altText: 'Slide 3',
+    caption: 'Slide 3'
+  } ,
+  {
+    src: avatar4,
+    id: 4,
+    altText: 'Slide 4',
+    caption: 'Slide 4'
+  },
+  {
+    src: avatar5,
     id: 3,
     altText: 'Slide 3',
     caption: 'Slide 3'
   }
+
 ];
 
 class Slido extends Component {
@@ -73,6 +94,7 @@ class Slido extends Component {
           onExiting={this.onExiting}
           onExited={this.onExited}
         >
+        <img className="img-fluid" src={item.src} alt={item.altText} />
           <CarouselCaption className="text-danger" captionText={item.caption} captionHeader={item.caption} />
         </CarouselItem>
       );
