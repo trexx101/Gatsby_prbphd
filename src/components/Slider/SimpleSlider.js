@@ -5,36 +5,6 @@ import { Link } from "react-router-dom";
 import Avatar from "../Util/Avatar";
 import {isMobile} from 'react-device-detect';
 
-import areas from "../../images/testimonials/ahmed.jpg"; 
-import chai from "../../images/testimonials/hamimi.jpg";
-import presc from "../../images/testimonials/jeslyn.jpg";
-import hmk from "../../images/testimonials/hmk.jpg";
-const items = [
-    {
-      name: 'Jeslyn Wong',
-      role: '- Student',
-      link: presc,
-      quote: 'Thank you Dr Thava for helping me to solve problems in dissertation paper. I have received a good experience from them in terms of delivery. They have consulted on SPSS and edited the whole thesis and i’m glad that my friend recommended them to me. In terms of customer service,they were extremely efficient to reply my questions and i was able to meet my thesis deadline. I would highly recommend them to my friends in future!!'
-    },
-    {
-      name: 'Hmk Nazrul Hakimi',
-      role: '- Student',
-      link: hmk,
-      quote: 'Last time, my friend recommended Dr Thava as a proofreader and editor to ensure the highest possible quality of my work. He did not disappoint!. Now, my manuscript has been accepted to publish in one of the leading journal in road safety study. From the first point of contact, Dr Thava and his team from #ProofreadingbyaUKPhD was professional and showed great commitment to their work. Dr Thava\’s edits and formatting work are impeccable and significantly improved the quality and fluency of my manuscript. I highly recommend him as an editor and proofreader!'
-    },
-    {
-      name: 'Ahmed A. Zaid',
-      role: '- Student',
-      link: areas,
-      quote: 'Thanks a lot, Proofreading by a UK Ph.D. It\'s was really awesome to work with you. Finally, the paper was accepted and published in the 😀👌👌👌Journal of cleaner production (impact factor 5.621)'
-    },
-    {
-      name: 'Hazmimi Hasim',
-      role: '- PHD Student',
-      link: chai,
-      quote: 'I am pleased to announce that my paper with P.M Dr. Che Rosmani Che Hassan and Dr Mahar Diana of University of Malaya has been published in the Safety Science Journal ( IF 3.1, Q1), it is the most prestigious journal in its area. My great gratitude to Dr Thavamaran Kanesan\'s continuous support via the Proofreading by UK PhD. He and his team have remarkably proofread the paper, and supported us throughout the review process. It was an excellent collaboration.'
-    }
-  ];
 
 class SimpleSlider extends React.Component {
 
@@ -79,22 +49,40 @@ class SimpleSlider extends React.Component {
     });
     const size = 90;
 
-    const slides = items.map((item) => {
+    const { entries: { entryList } } = this.props;
+
+    /*this.props.entries.forEach(element => {
+      console.log("Testimonials from :: " +element.node.acf.name)
+    });*/
+
+    
+
+    const slides = this.props.entries.map((item) => {
+
+      let { name, role, quote, stars, pictureLink } = item.node.acf;
+
+      //stars element to arra array
+      const starList = []
+      var i;
+      if(stars > 5){
+        stars = 5;
+      }
+
+      for (i=0;i<stars;i++) {
+        starList.push(<i className="fas fa-star" />)
+      }
+
         return (
         <div className="px-3 row">
           <Card body className="text-center col-sm-12 col-lg-12 col-md-12 padding">
-            <Avatar size={size} src={item.link} className="mx-auto" rounded/>
-            <Link to="/" ><CardTitle>{item.name}</CardTitle></Link>
-            <CardText>{item.role}</CardText>
+            <Avatar size={size} src={pictureLink.source_url} className="mx-auto" rounded/>
+            <Link to="/" ><CardTitle>{name}</CardTitle></Link>
+            <CardText>{role}</CardText>
             <span className="iconstar">
-              <i className="fas fa-star" />
-              <i className="fas fa-star" />
-              <i className="fas fa-star" />
-              <i className="fas fa-star" />
-              <i className="fas fa-star" />
+            {starList}
             </span>
             
-            <p><i className="fas fa-quote-left fa-2x mr-2 theme" ></i>{item.quote}</p>
+            <p><i className="fas fa-quote-left fa-2x mr-2 theme" ></i>{quote}</p>
           </Card>
           <style jsx>{`
           .iconstar {

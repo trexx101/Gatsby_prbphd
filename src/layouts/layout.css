@@ -27,6 +27,9 @@
   --white: #ffffff;
   --neutral: #ffffff;
   --darker: black;
+  --gutter: 7rem;
+  --icon-size: 5rem;
+  --icon-sm-size: 3.75rem;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;

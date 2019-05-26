@@ -1,13 +1,12 @@
 import React from 'react';
-import { Card, CardTitle, CardText, CardImg, CardImgOverlay } from 'reactstrap';
+import { Card, CardTitle, CardText,Button, CardImg, CardImgOverlay } from 'reactstrap';
 
 const CardOverlay = (props) => {
   return (
     <div className="mb-3">
       <Card inverse>
-        <CardImg src={props.data} alt="Card image cap" />
-        <CardImgOverlay>
-        </CardImgOverlay>
+        <CardTitle >{props.data}</CardTitle>
+        <Button src={props.url}>Open</Button>
       </Card>
     </div>
   );

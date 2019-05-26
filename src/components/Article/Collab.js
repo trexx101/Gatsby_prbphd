@@ -111,10 +111,6 @@ render() {
 Carousel.propTypes = {
   // the current active slide of the carousel
   activeIndex: PropTypes.number,
-  // a function which should advance the carousel to the next slide (via activeIndex)
-  next: PropTypes.func.isRequired,
-  // a function which should advance the carousel to the previous slide (via activeIndex)
-  previous: PropTypes.func.isRequired,
   // controls if the left and right arrow keys should control the carousel
   keyboard: PropTypes.bool,
   /* If set to "hover", pauses the cycling of the carousel on mouseenter and resumes the cycling of the carousel on

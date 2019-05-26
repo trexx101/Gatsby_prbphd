@@ -39,7 +39,7 @@ const items = [
   },
   {
     src: avatar5,
-    id: 3,
+    id: 5,
     altText: 'Slide 3',
     caption: 'Slide 3'
   }

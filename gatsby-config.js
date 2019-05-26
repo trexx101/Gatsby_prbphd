@@ -162,6 +162,16 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: "gatsby-source-wordpress",
+      options: {
+          baseUrl: "proofreadingblog.thethasolutions.com",
+          protocol: "http",
+          hostingWPCOM: false,
+          useACF: true,
+          verboseOutput: true
+      }
+  },
     `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-google-analytics`,

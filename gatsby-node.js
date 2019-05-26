@@ -32,6 +32,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     const postTemplate = path.resolve("./src/templates/PostTemplate.js");
     const pageTemplate = path.resolve("./src/templates/PageTemplate.js");
     const categoryTemplate = path.resolve("./src/templates/CategoryTemplate.js");
+
+
+
     resolve(
       graphql(
         `
@@ -65,6 +68,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
         const items = result.data.allMarkdownRemark.edges;
 
+        
         // Create category list
         const categorySet = new Set();
         items.forEach(edge => {

@@ -37,6 +37,9 @@ class IndexPage extends React.Component {
 
     const {
       data: {
+        contents: { totalCount,  edges },
+        testimonials: { edges: records },
+        papers: { title,  edges: paperEntries },
         posts: { edges: posts = [] },
         bgDesktop: {
           resize: { src: desktop }
@@ -52,6 +55,10 @@ class IndexPage extends React.Component {
         }
       }
     } = this.props;
+    //console.log("Hello... "+ totalCount);
+    // paperEntries.forEach(element => {
+    //   console.log(" ==> "+element.node.acf.image.source_url)
+    // });
 
     const backgrounds = {
       desktop,
@@ -102,7 +109,7 @@ class IndexPage extends React.Component {
                   </Col>
                 </Row>
 
-                <SimpleSlider />
+                <SimpleSlider entries={records} />
               </div>
             </div>
             <div className="row">
@@ -177,7 +184,7 @@ class IndexPage extends React.Component {
               <h1>Our Work</h1>
             </Col>
           </Row>
-          <WorkTable />
+          <WorkTable contentData={this.props.data.contents} paperData={paperEntries} />
         </div>
 
         <div className="container container-fluid padding">
@@ -300,6 +307,55 @@ export const guery = graphql`
         src
       }
     }
+    contents: allWordpressWpContent{
+      totalCount,
+      edges {
+        node {
+          id,
+          acf{
+            title
+            image {
+              source_url
+            }
+          }
+        }
+      }
+    }
+
+    papers: allWordpressWpPaper{
+      edges {
+          node {
+            
+            acf{
+              title
+              image {
+                source_url
+              }
+              
+            }
+            
+          }
+        }   
+    }
+
+    testimonials: allWordpressWpTestimonial{
+      edges {
+          node {
+            acf{
+              name
+              role
+              stars
+              quote
+              pictureLink {
+                source_url
+              }
+              
+            }
+            
+          }
+        }   
+    }
+
   }
 `;
 

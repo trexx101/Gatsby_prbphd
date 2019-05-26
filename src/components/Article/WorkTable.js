@@ -40,50 +40,68 @@ export default class WorkTable extends React.Component {
   }
   render() {
     const joinGroup = "<div class=\"fb-group\" data-href=\"https://www.facebook.com/groups/effectivepublishing/\" data-width=\"280\" data-show-social-context=\"false\" data-show-metadata=\"false\"></div>"
+    const {
+      contentData: {
+        totalCount,  edges 
+      }
+    } = this.props;
+    const {
+      paperData: { edges: paperRecords}
+    } = this.props;
 
+    // this.props.paperData.map(element => {
+    //   console.log("papers from :: " +element.node.acf.image.source_url)
+    // });
+
+    //console.log("Hello... "+ paperRecords);
     return (
       <div className="row padding">
         <div className="col-xs-12 col-sm-12 col-md-6">
           <div className="padding">
-            <h4>ACADEMIC TUTORIALS</h4>
+            <h3 className="padding">ACADEMIC TUTORIALS</h3>
             <div className="row mb-4 pb-3">
               <div className="col-xs-4 col-sm-6 col-md-4 padding">
-              <ModalImage className="pb-4" large={content1} small={content1}/>
-              <ModalImage className="pb-4" large={content2} small={content2}/>
-              <ModalImage className="pb-4" large={content3} small={content3}/>
+              <ModalImage className="pb-4" large={edges[0].node.acf.image.source_url} small={edges[0].node.acf.image.source_url}/>
+              <ModalImage className="pb-4" large={edges[1].node.acf.image.source_url} small={edges[1].node.acf.image.source_url}/>
+              <ModalImage className="pb-4" large={edges[2].node.acf.image.source_url} small={edges[2].node.acf.image.source_url}/>
+              <CardOverlay data="Complete clients' publications" url=""/>
               </div>
               <div className="col-xs-4 col-sm-6 col-md-4">
-              <ModalImage className="pb-4" large={content4} small={content4}/>
-              <ModalImage className="pb-4" large={content5} small={content5}/>
-              <ModalImage className="pb-4" large={content6} small={content6}/>
+              <ModalImage className="pb-4" large={edges[4].node.acf.image.source_url} small={edges[4].node.acf.image.source_url}/>
+              <ModalImage className="pb-4" large={edges[5].node.acf.image.source_url} small={edges[5].node.acf.image.source_url}/>
+              <ModalImage className="pb-4" large={edges[6].node.acf.image.source_url} small={edges[6].node.acf.image.source_url}/>
               </div>
               <div className="col-xs-4 col-sm-6 col-md-4">
-              <ModalImage className="pb-4" large={content2} small={content2}/>
-              <ModalImage className="pb-4" large={content2} small={content2}/>
+              <ModalImage className="pb-4" large={edges[7].node.acf.image.source_url} small={edges[7].node.acf.image.source_url}/>
+              <ModalImage className="pb-4" large={edges[8].node.acf.image.source_url} small={edges[8].node.acf.image.source_url}/>
               <ModalImage className="pb-4" large={content2} small={content2}/>
               </div>
+              
               
             </div>
           </div>
         </div>
         <div className="col-xs-12 col-sm-12 col-md-6">
           <div className="padding">
-            <h4>CLIENTS’ ACCEPTED PAPERS</h4>
+            <h3 className="padding">CLIENTS’ ACCEPTED PAPERS</h3>
             <div className="row">
               <div className="col-xs-4 col-sm-6 col-md-4 padding">
-              <ModalImage className="pb-4" large={paper0} small={paper0}/>
-              <ModalImage className="pb-4" large={paper1} small={paper1}/>
-              <ModalImage className="pb-4" large={paper2} small={paper2}/>
+              <ModalImage className="pb-4" large={this.props.paperData[0].node.acf.image.source_url} small={this.props.paperData[0].node.acf.image.source_url}/>
+              <ModalImage className="pb-4" large={this.props.paperData[1].node.acf.image.source_url} small={this.props.paperData[1].node.acf.image.source_url}/>
+              <ModalImage className="pb-4" large={this.props.paperData[2].node.acf.image.source_url} small={this.props.paperData[2].node.acf.image.source_url}/>
+              <CardOverlay data="More Thesis and tutorials" url=""/>
               </div>
               <div className="col-xs-4 col-sm-6 col-md-4">
-              <ModalImage className="pb-4" large={paper3} small={paper3}/>
-              <ModalImage className="pb-4" large={paper5} small={paper5}/>
-              <ModalImage className="pb-4" large={paper6} small={paper6}/>
+              <ModalImage className="pb-4" large={this.props.paperData[3].node.acf.image.source_url} small={this.props.paperData[3].node.acf.image.source_url}/>
+              <ModalImage className="pb-4" large={this.props.paperData[4].node.acf.image.source_url} small={this.props.paperData[4].node.acf.image.source_url}/>
+              <ModalImage className="pb-4" large={this.props.paperData[5].node.acf.image.source_url} small={this.props.paperData[5].node.acf.image.source_url}/>
+              <CardOverlay data="More publication tutorials" url=""/>
               </div>
               <div className="col-xs-4 col-sm-6 col-md-4">
-              <ModalImage className="pb-4" large={paper6} small={paper6}/>
-              <ModalImage className="pb-4" large={paper6} small={paper6}/>
-              <ModalImage className="pb-4" large={paper6} small={paper6}/>
+              <ModalImage className="pb-4" large={this.props.paperData[6].node.acf.image.source_url} small={this.props.paperData[6].node.acf.image.source_url}/>
+              <ModalImage className="pb-4" large={this.props.paperData[7].node.acf.image.source_url} small={this.props.paperData[7].node.acf.image.source_url}/>
+              <ModalImage className="pb-4" large={this.props.paperData[8].node.acf.image.source_url} small={this.props.paperData[8].node.acf.image.source_url}/>
+              <CardOverlay data="More Research and career tutorials" url=""/>
               </div>
               
             </div>
