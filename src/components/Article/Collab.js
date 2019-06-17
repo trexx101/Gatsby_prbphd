@@ -39,101 +39,99 @@ class Collab extends React.Component {
   constructor(props) {
     super(props);
     this.state = { activeIndex: 0 };
-    this.goToIndex = this.goToIndex.bind(this);
-    this.onExiting = this.onExiting.bind(this);
-    this.onExited = this.onExited.bind(this);
-  }
-
-  onExiting() {
-    this.animating = true;
-  }
-
-  onExited() {
-    this.animating = false;
-  }
-
-
-
-  goToIndex(newIndex) {
-    if (this.animating) return;
-    this.setState({ activeIndex: newIndex });
   }
 
 render() {
   const { activeIndex } = this.state;
   const slides = items.map((item) => {
     return (
-      <CarouselItem
-        className="logo-size img-responsive center-block"
-        onExiting={this.onExiting}
-        onExited={this.onExited}
-        key={item.src}
-      >
-        <img className="img-fluid" src={item.src} alt={item.altText} />
-      </CarouselItem>
+      <div class="slide">
+        <img className="img-fluid" src={item.src} alt={item.altText} height="100" width="250"/>
+		  </div>
+        
+      
     );
   });
 
   return (
     <div className="mb-6">
-         <style>
-          {
-            `.publishers {
-                max-width: 100%;
-                height: auto;
-              }
-              .logo-size{
-                text-align: center;
-                height: 200px;
-
-                img{
-                  
-                  width: 30%; 
-                  margin: auto;
-                }
-              }
-              `
-          }
-        </style>
-        <Carousel
-        activeIndex={activeIndex}
-        ride="carousel"
-      >
-        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
-        {slides}
-      </Carousel>
+        <div className="slider">
+	        <div className="slide-track">
+            {slides}
+          </div>
+        </div>
+      <style jsx>{`
+        .bigbody {
+          align-items: center;
+          background: #E3E3E3;
+          display: flex;
+          height: 100vh;
+          justify-content: center;
+        }
         
+        @-webkit-keyframes scroll {
+          0% {
+            -webkit-transform: translateX(0);
+                    transform: translateX(0);
+          }
+          100% {
+            -webkit-transform: translateX(calc(-250px * 7));
+                    transform: translateX(calc(-250px * 7));
+          }
+        }
+        
+        @keyframes scroll {
+          0% {
+            -webkit-transform: translateX(0);
+                    transform: translateX(0);
+          }
+          100% {
+            -webkit-transform: translateX(calc(-250px * 7));
+                    transform: translateX(calc(-250px * 7));
+          }
+        }
+        .slider {
+          background: white;
+          box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+          height: 100px;
+          margin: auto;
+          overflow: hidden;
+          position: relative;
+          width: 960px;
+        }
+        .slider::before, .slider::after {
+          background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+          content: "";
+          height: 100px;
+          position: absolute;
+          width: 200px;
+          z-index: 2;
+        }
+        .slider::after {
+          right: 0;
+          top: 0;
+          -webkit-transform: rotateZ(180deg);
+                  transform: rotateZ(180deg);
+        }
+        .slider::before {
+          left: 0;
+          top: 0;
+        }
+        .slider .slide-track {
+          -webkit-animation: scroll 40s linear infinite;
+                  animation: scroll 40s linear infinite;
+          display: flex;
+          width: calc(250px * 14);
+        }
+        .slider .slide {
+          height: 100px;
+          width: 250px;
+        }
+        
+      `}</style>
     </div>
   );
 }
 }
-
-Carousel.propTypes = {
-  // the current active slide of the carousel
-  activeIndex: PropTypes.number,
-  // controls if the left and right arrow keys should control the carousel
-  keyboard: PropTypes.bool,
-  /* If set to "hover", pauses the cycling of the carousel on mouseenter and resumes the cycling of the carousel on
-   * mouseleave. If set to false, hovering over the carousel won't pause it. (default: "hover")
-   */
-  pause: PropTypes.oneOf(['hover', false]),
-  // Autoplays the carousel after the user manually cycles the first item. If "carousel", autoplays the carousel on load.
-  // This is how bootstrap defines it... I would prefer a bool named autoplay or something...
-  ride: PropTypes.oneOf(['carousel']),
-  // the interval at which the carousel automatically cycles (default: 5000)
-  interval: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.string,
-    PropTypes.bool,
-  ]),
-  children: PropTypes.array,
-  // called when the mouse enters the Carousel
-  mouseEnter: PropTypes.func,
-  // called when the mouse exits the Carousel
-  mouseLeave: PropTypes.func,
-  // controls whether the slide animation on the Carousel works or not
-  slide: PropTypes.bool,
-  cssModule: PropTypes.object,
-};
 
 export default Collab;

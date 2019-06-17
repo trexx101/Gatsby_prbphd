@@ -32,8 +32,10 @@ class Header extends React.Component {
     const homepage = this.props.path === "/" ? "homepage" : "";
     const aboutpage = this.props.path === "/about/" ? "about" : "";
     const paperpage = this.props.path === "/papers/" ? "about" : "";
+    const contentpage = this.props.path === "/content/" ? "about" : "";
+    const workshoppage = this.props.path === "/workshop/" ? "workshop" : "";
 
-    return `${fixed} ${homepage} ${aboutpage} ${paperpage}`;
+    return `${fixed} ${homepage} ${aboutpage} ${paperpage} ${contentpage}  ${workshoppage}`;
   };
 
   render() {

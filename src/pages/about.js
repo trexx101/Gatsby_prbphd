@@ -37,6 +37,7 @@ class AboutPage extends React.Component {
   render() {
     const {
       data: {
+        testimonials: { edges: records },
         posts: { edges: posts = [] },
         bgDesktop: {
           resize: { src: desktop }
@@ -78,7 +79,7 @@ class AboutPage extends React.Component {
                         About Us and Services <span className="text-info">get to know us</span>
                       </h1>
                     </Col>
-                  </Row>
+              </Row>
                 <Row>
                   <Col md={{ size: 9 }}>
                     <div className="mb-4">
@@ -356,7 +357,7 @@ class AboutPage extends React.Component {
                 <div className="row">
                   <div className="col">
                     <h1 className=" pb-4">Testimonials</h1>
-                    <SimpleSlider />
+                    <SimpleSlider entries={records} />
                   </div>
                 </div>
               </div>
@@ -747,6 +748,23 @@ export const guery = graphql`
       resize(width: 450, height: 850, quality: 90, cropFocus: CENTER) {
         src
       }
+    }
+    testimonials: allWordpressWpTestimonial{
+      edges {
+          node {
+            acf{
+              name
+              role
+              stars
+              quote
+              pictureLink {
+                source_url
+              }
+              
+            }
+            
+          }
+        }   
     }
   }
 `;

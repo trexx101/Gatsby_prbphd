@@ -29,7 +29,7 @@ import paper3 from "../../images/papers/Slide7.png";
 import paper5 from "../../images/papers/Slide37.png";
 import paper6 from "../../images/papers/Slide40.png";
 
-export default class WorkTable extends React.Component {
+export default class Team extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
