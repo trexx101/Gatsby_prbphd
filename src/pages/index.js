@@ -10,7 +10,6 @@ import Collab from "../components/Article/Collab";
 import SimpleSlider from "../components/Slider/SimpleSlider";
 import Slido from "../components/Article/Slider";
 import { Button, Container } from "reactstrap";
-//import { Col } from "antd";
 import {
   Row,
   Col,
@@ -199,7 +198,7 @@ class IndexPage extends React.Component {
             <p>Interesting in one one of our Workshops?</p>
           </div>
           <div className="d-flex justify-content-center mt-4">
-            <Button>Find out more</Button>
+            <Button>Find out more.</Button>
           </div>
         </div>
 
